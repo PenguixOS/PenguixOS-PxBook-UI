@@ -980,19 +980,74 @@ button,input,textarea{font-family:inherit}
               <div style="display: flex; gap: 6px; padding: 8px 10px; border-bottom: 1px solid var(--line); align-items: center">
                 <button class="w-btn2" onClick="{{web.back}}" aria-label="Back">‹</button>
                 <button class="w-btn2" onClick="{{web.home}}" aria-label="Home">⌂</button>
-                <input class="w-inp" style="flex: 1; text-align: center" aria-label="Address or search" placeholder="Search Google or type a website" value="{{web.input}}" onChange="{{web.onInput}}" onKeyDown="{{web.onKey}}">
+                <input class="w-inp" style="flex: 1; text-align: center" aria-label="Address or search" placeholder="Search or type a website" value="{{web.input}}" onChange="{{web.onInput}}" onKeyDown="{{web.onKey}}">
                 <button class="w-btn" onClick="{{web.go}}">Go</button>
               </div>
               <div class="scr" style="flex: 1; padding: 28px 34px; display: flex; flex-direction: column; gap: 12px">
                 <sc-if value="{{web.isHome}}" hint-placeholder-val="{{ false }}">
                   <div class="w-card" style="display: flex; flex-direction: column; gap: 10px; padding: 18px">
-                    <div style="font-size: 20px; font-weight: 800">Search Google</div>
+                    <div style="font-size: 20px; font-weight: 800">PxSearch</div>
                     <div style="display: flex; gap: 8px">
-                      <input class="w-inp" style="flex: 1; height: 42px; font-size: 15px" aria-label="Search Google" placeholder="Type anything and press Enter" value="{{web.gq}}" onChange="{{web.onGq}}" onKeyDown="{{web.onGqKey}}">
+                      <input class="w-inp" style="flex: 1; height: 42px; font-size: 15px" aria-label="Search the web" placeholder="Search anything and press Enter" value="{{web.gq}}" onChange="{{web.onGq}}" onKeyDown="{{web.onGqKey}}">
                       <button class="w-btn" onClick="{{web.gSearch}}" style="height: 42px">Search</button>
                     </div>
-                    <div class="w-sub">Results open in a real browser tab. <a href="{{web.gHref}}" target="_blank" rel="noopener noreferrer">Open Google</a></div>
+                    <div class="w-sub">Results show right here in PxBrowser. Every search also has an "Open in Google" button. <a href="{{web.gHref}}" target="_blank" rel="noopener noreferrer">Open Google</a></div>
                   </div>
+                </sc-if>
+                <sc-if value="{{web.pxs.on}}" hint-placeholder-val="{{ false }}">
+                  <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap">
+                    <span style="font-size: 22px; font-weight: 800; letter-spacing: -.3px"><span style="color: #2B7FE6">Px</span><span style="color: #E5543F">S</span><span style="color: #E9A93A">e</span><span style="color: #2B7FE6">a</span><span style="color: #2FB86E">r</span><span style="color: #E5543F">c</span><span style="color: #8E5CF5">h</span></span>
+                    <span class="w-sub" style="flex: 1; min-width: 120px">{{web.pxs.count}}</span>
+                    <sc-if value="{{web.pxs.canAsk}}" hint-placeholder-val="{{ false }}"><button class="wt-chip" onClick="{{web.pxs.ask}}">✦ Ask PxIntelligence</button></sc-if>
+                    <button class="w-btn2" onClick="{{web.pxs.google}}">Open in Google ↗</button>
+                  </div>
+                  <sc-if value="{{web.pxs.hasAi}}" hint-placeholder-val="{{ false }}">
+                    <div class="w-card" style="padding: 14px; display: flex; flex-direction: column; gap: 6px; box-shadow: inset 0 0 0 1.5px rgba(142,92,245,0.5)">
+                      <div style="font-size: 12px; font-weight: 800; color: #8E5CF5">✦ PxIntelligence</div>
+                      <sc-if value="{{web.pxs.aiBusy}}" hint-placeholder-val="{{ false }}"><span class="ai-dots" aria-label="Thinking"><span></span><span></span><span></span></span></sc-if>
+                      <div style="font-size: 14px; line-height: 1.55; white-space: pre-wrap">{{web.pxs.aiText}}</div>
+                      <div style="font-size: 12px; color: #D63B2F; font-weight: 700">{{web.pxs.aiErr}}</div>
+                    </div>
+                  </sc-if>
+                  <sc-if value="{{web.pxs.loading}}" hint-placeholder-val="{{ false }}"><div class="w-sub" style="padding: 20px 0">Searching for "{{web.pxs.q}}"…</div></sc-if>
+                  <sc-if value="{{web.pxs.offline}}" hint-placeholder-val="{{ false }}">
+                    <div class="w-card" style="padding: 16px; display: flex; flex-direction: column; gap: 8px">
+                      <div style="font-weight: 800; font-size: 16px">PxSearch can't reach the internet here</div>
+                      <div class="w-sub">Inside the Claude app, pages aren't allowed to go online. Open PxBook in Safari or from your Home Screen to get live results, or use Google in a new tab.</div>
+                      <div style="display: flex; gap: 8px; flex-wrap: wrap"><button class="w-btn" onClick="{{web.pxs.google}}">Search "{{web.pxs.q}}" on Google ↗</button><button class="w-btn2" onClick="{{web.pxs.retry}}">Try again</button></div>
+                    </div>
+                  </sc-if>
+                  <sc-if value="{{web.pxs.none}}" hint-placeholder-val="{{ false }}"><div class="w-sub" style="padding: 10px 0">No results for "{{web.pxs.q}}". Try other words, or Open in Google.</div></sc-if>
+                  <div style="display: flex; gap: 18px; align-items: flex-start">
+                    <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+                      <sc-for list="{{web.pxs.results}}" as="r" hint-placeholder-count="3">
+                        <div style="display: flex; flex-direction: column; gap: 3px">
+                          <span style="font-size: 12px; color: var(--sub)">{{r.site}}</span>
+                          <button class="plain" onClick="{{r.go}}" style="font-size: 17px; font-weight: 700; color: #1F6FD1; text-align: left; cursor: pointer">{{r.title}}</button>
+                          <span style="font-size: 13.5px; line-height: 1.5">{{r.snippet}}</span>
+                        </div>
+                      </sc-for>
+                    </div>
+                    <sc-if value="{{web.pxs.hasPanel}}" hint-placeholder-val="{{ false }}">
+                      <div class="w-card" style="width: 240px; flex: none; padding: 14px; display: flex; flex-direction: column; gap: 8px">
+                        <sc-if value="{{web.pxs.panel.hasImg}}" hint-placeholder-val="{{ false }}"><img src="{{web.pxs.panel.img}}" alt="{{web.pxs.panel.title}}" style="width: 100%; max-height: 180px; object-fit: cover; border-radius: 10px"></sc-if>
+                        <div style="font-size: 18px; font-weight: 800">{{web.pxs.panel.title}}</div>
+                        <div class="w-sub">{{web.pxs.panel.desc}}</div>
+                        <div style="font-size: 13px; line-height: 1.55; display: -webkit-box; -webkit-line-clamp: 9; -webkit-box-orient: vertical; overflow: hidden">{{web.pxs.panel.text}}</div>
+                        <button class="w-btn2" onClick="{{web.pxs.panel.read}}" style="align-self: flex-start">Read more</button>
+                      </div>
+                    </sc-if>
+                  </div>
+                </sc-if>
+                <sc-if value="{{web.wk.on}}" hint-placeholder-val="{{ false }}">
+                  <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap"><span class="w-sub" style="flex: 1">Wikipedia, read in PxBrowser</span><button class="w-btn2" onClick="{{web.wk.open}}">Open on Wikipedia ↗</button></div>
+                  <div style="font-size: 30px; font-weight: 800; letter-spacing: -.5px; word-break: break-word">{{web.wk.title}}</div>
+                  <sc-if value="{{web.wk.loading}}" hint-placeholder-val="{{ false }}"><div class="w-sub">Loading…</div></sc-if>
+                  <sc-if value="{{web.wk.offline}}" hint-placeholder-val="{{ false }}"><div class="w-sub">PxBrowser can't reach the internet here. Use "Open on Wikipedia".</div></sc-if>
+                  <sc-for list="{{web.wk.paras}}" as="p" hint-placeholder-count="2">
+                    <sc-if value="{{p.head}}" hint-placeholder-val="{{ false }}"><div style="font-size: 19px; font-weight: 800; margin-top: 8px">{{p.t}}</div></sc-if>
+                    <sc-if value="{{p.body}}" hint-placeholder-val="{{ true }}"><div style="font-size: 15px; line-height: 1.65">{{p.t}}</div></sc-if>
+                  </sc-for>
                 </sc-if>
                 <div style="font-size: 30px; font-weight: 800; letter-spacing: -.5px; word-break: break-word">{{web.page.title}}</div>
                 <sc-for list="{{web.page.paras}}" as="p" hint-placeholder-count="2"><div style="font-size: 15px; line-height: 1.65">{{p}}</div></sc-for>
@@ -3274,7 +3329,7 @@ class Component extends DCLogic {
       pwIn: '', loginErr: '', shake: 0, tries: 0, resetArm: false,
       acName: '', acPw: '', acNew: '', acNew2: '', acMsg: '', acOk: false, eraseArm: false,
       savedAt: 0, bkOpen: false, bkText: '', bkMsg: '', bkOk: false, fsHelp: false, isFs: false, gq: '', res: 'auto',
-      panic: null,
+      panic: null, srch: null, wiki: null,
       aiMsgs: [], aiIn: '', aiBusy: false, aiMode: 'checking', aiWT: null, aiUndo: null,
       setSec: 'general', setQ: '', sb: null, sbX: 0, sbPick: '', sbPass: '', sbErr: '', btConn: {}, notifSound: false, batPct: false, showSpaces: true, sbBt: true, sbSnd: true, lowPower: false, batPlug: false, batSim: 0.82, batReal: null, deskPos: {}, lpOrder: [], lpEdit: false, ghost: null, fDrop: null,
       shotImg: {}, termCwd: '', termHist: [], termHi: -1, termEnv: {}, termAlias: {}, termColor: '',
@@ -5011,11 +5066,68 @@ class Component extends DCLogic {
       let href = '';
       if (/^https?:\/\//i.test(url)) href = url;
       else if (/^[^\s\/]+\.[a-z]{2,}(\/\S*)?$/i.test(url)) href = 'https://' + url;
-      else href = 'https://www.google.com/search?q=' + encodeURIComponent(url);
+      else {
+        const sq = url;
+        url = 'px://search?q=' + encodeURIComponent(sq);
+        this.setState({ hist: this.state.hist.concat([this.state.url]), url, urlIn: sq });
+        this.searchWeb(sq);
+        return;
+      }
       this.openExternal(href);
       url = href;
     }
+    if (url.indexOf('px://search?q=') === 0 && (!this.state.srch || this.state.srch.q !== decodeURIComponent(url.slice(14)))) this.searchWeb(decodeURIComponent(url.slice(14)));
     this.setState({ hist: this.state.hist.concat([this.state.url]), url, urlIn: url });
+  }
+  /* ===== PXSEARCH (real results inside PxBrowser) ===== */
+  searchWeb(q) {
+    q = String(q || '').trim();
+    if (!q) return;
+    const id = (this.srchId = (this.srchId || 0) + 1);
+    const lang = { mn: 'mn', bo: 'bo', ug: 'ug' }[this.state.uiLang] || 'en';
+    this.setState({ srch: { q, status: 'loading', results: [], panel: null, ai: null, lang } });
+    const clean = (h) => String(h || '').replace(/<[^>]+>/g, '').replace(/&quot;/g, '"').replace(/&#0?39;/g, "'").replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&nbsp;/g, ' ');
+    const get = (l) => fetch('https://' + l + '.wikipedia.org/w/api.php?action=query&list=search&format=json&origin=*&srlimit=10&srprop=snippet|timestamp&srsearch=' + encodeURIComponent(q))
+      .then((r) => { if (!r.ok) throw new Error('http'); return r.json(); })
+      .then((j) => ((j.query && j.query.search) || []).map((x) => ({ title: x.title, snippet: clean(x.snippet) + '…', lang: l, url: 'https://' + l + '.wikipedia.org/wiki/' + encodeURIComponent(x.title.replace(/ /g, '_')) })));
+    const live = () => this.srchId === id;
+    let p;
+    try { p = get(lang).then((r) => (r.length || lang === 'en' ? r : get('en'))); } catch (e) { p = Promise.reject(e); }
+    p.then((results) => {
+      if (!live()) return;
+      this.setState((st) => ({ srch: Object.assign({}, st.srch, { status: results.length ? 'done' : 'none', results }) }));
+      const top = results[0];
+      if (top) fetch('https://' + top.lang + '.wikipedia.org/api/rest_v1/page/summary/' + encodeURIComponent(top.title.replace(/ /g, '_')))
+        .then((r) => (r.ok ? r.json() : null))
+        .then((j) => { if (!live() || !j || !j.extract) return; this.setState((st) => ({ srch: Object.assign({}, st.srch, { panel: { title: j.title, text: j.extract, img: j.thumbnail && j.thumbnail.source ? j.thumbnail.source : '', desc: j.description || '', lang: top.lang } }) })); })
+        .catch(() => {});
+    }).catch(() => { if (live()) this.setState((st) => ({ srch: Object.assign({}, st.srch, { status: 'offline' }) })); });
+  }
+  readWiki(title, lang) {
+    const l = lang || 'en';
+    const url = 'px://wiki/' + l + '/' + encodeURIComponent(title);
+    this.setState({ hist: this.state.hist.concat([this.state.url]), url, urlIn: title, wiki: { title, lang: l, status: 'loading', paras: [] } });
+    fetch('https://' + l + '.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&exsectionformat=plain&redirects=1&format=json&origin=*&titles=' + encodeURIComponent(title))
+      .then((r) => { if (!r.ok) throw new Error('http'); return r.json(); })
+      .then((j) => {
+        const pages = (j.query && j.query.pages) || {};
+        const pg = pages[Object.keys(pages)[0]] || {};
+        const paras = String(pg.extract || '').split(/\n+/).map((x) => x.trim()).filter(Boolean).slice(0, 80);
+        if (this.state.url !== url) return;
+        this.setState({ wiki: { title: pg.title || title, lang: l, status: paras.length ? 'done' : 'none', paras } });
+      })
+      .catch(() => { if (this.state.url === url) this.setState({ wiki: { title, lang: l, status: 'offline', paras: [] } }); });
+  }
+  searchAsk() {
+    const sr = this.state.srch;
+    if (!sr || !this.sampleFn || (sr.ai && sr.ai.busy)) return;
+    const q = sr.q;
+    const ctx = sr.results.slice(0, 5).map((r) => '- ' + r.title + ': ' + r.snippet).join('\n');
+    this.setState((st) => ({ srch: Object.assign({}, st.srch, { ai: { busy: true, text: '' } }) }));
+    const upd = (patch) => this.setState((st) => (st.srch && st.srch.q === q ? { srch: Object.assign({}, st.srch, { ai: Object.assign({}, st.srch.ai, patch) }) } : {}));
+    this.sampleFn('Answer this search in 2-4 short sentences, plainly, in the language of the question. If it depends on recent news you may not know, say so.\n\nSearch: ' + q + (ctx ? '\n\nWikipedia results that may help:\n' + ctx : ''), { modelTier: 'quick', onText: ({ text }) => upd({ text }) })
+      .then((r) => upd({ busy: false, text: r.text }))
+      .catch((e) => { if (e && (e.code === 'not_granted' || e.code === 'sampling_disabled')) { this.sampleFn = null; this.setState({ aiMode: 'device' }); } upd({ busy: false, text: (e && e.text) || '', err: e && e.code === 'rate_limited' ? 'Too many questions right now. Try again soon.' : 'PxIntelligence could not answer this time.' }); });
   }
   openExternal(href) {
     try { window.open(href, '_blank', 'noopener'); } catch (e) { /* the page still shows a button to open it */ }
@@ -5376,7 +5488,7 @@ class Component extends DCLogic {
       s.clips.filter((c) => hit(c.name)).slice(0, 2).forEach((c) => sres.push({ name: c.name, c: PXB_APP.clips.c, d: PXB_APP.clips.d, kind: t('Clip'), open: () => { this.setState({ spot: false, spotQ: '' }); this.playClip(c.id); } }));
       sres = sres.slice(0, 9);
       sres.push({ name: 'Ask PxIntelligence: "' + s.spotQ.trim() + '"', c: PXB_APP.intel.c, d: PXB_APP.intel.d, kind: 'PxIntelligence', open: () => { const q = s.spotQ.trim(); this.setState({ spot: false, spotQ: '' }); this.openApp('intel'); setTimeout(() => this.aiSend(q), 150); } });
-      sres.push({ name: 'Search Google for "' + s.spotQ.trim() + '"', c: PXB_APP.browser.c, d: PXB_APP.browser.d, kind: t('Web'), open: () => { const q = s.spotQ.trim(); this.openApp('browser'); this.goUrl(q); } });
+      sres.push({ name: 'Search the web for "' + s.spotQ.trim() + '"', c: PXB_APP.browser.c, d: PXB_APP.browser.d, kind: t('Web'), open: () => { const q = s.spotQ.trim(); this.setState({ spot: false, spotQ: '' }); this.openApp('browser'); this.goUrl(q); } });
     }
     const sSel = Math.min(s.spotSel || 0, Math.max(0, sres.length - 1));
     sres.forEach((r, i) => { r.cls = i === sSel ? 'sel' : ''; });
@@ -5684,7 +5796,27 @@ class Component extends DCLogic {
         : { title: host, paras: [host + ' opened in a new tab.', 'Most real websites cannot be shown inside PxBrowser, so they open in a real browser tab. If nothing opened, use the button below.'], links: [['PX Start', 'px://home']] };
       ext = [{ label: q ? 'Open Google results' : 'Open ' + host, href: s.url }];
     }
+    const isSearch = s.url.indexOf('px://search?q=') === 0, isWiki = s.url.indexOf('px://wiki/') === 0;
+    if (!page && (isSearch || isWiki)) page = { title: '', paras: [], links: [] };
     if (!page) page = { title: 'PX Search', paras: ['Nothing found for "' + s.url + '".'], links: [['PX Start', 'px://home'], ['PxBook Help', 'px://help']] };
+    const sr = s.srch || { q: '', status: 'none', results: [], panel: null, ai: null };
+    const wk = s.wiki || { title: '', lang: 'en', status: 'none', paras: [] };
+    const gUrl = (q) => 'https://www.google.com/search?q=' + encodeURIComponent(q);
+    const pxs = {
+      on: isSearch, q: sr.q, loading: sr.status === 'loading', offline: sr.status === 'offline', none: sr.status === 'none', done: sr.status === 'done',
+      count: sr.status !== 'done' ? '' : sr.results.length + ' results from Wikipedia' + (sr.lang && sr.lang !== 'en' && sr.results[0] && sr.results[0].lang === sr.lang ? ' (' + PXB_GREET[sr.lang].label + ')' : ''),
+      results: sr.results.map((r) => ({ title: r.title, snippet: r.snippet, site: r.lang + '.wikipedia.org › wiki', go: () => this.readWiki(r.title, r.lang), href: r.url })),
+      hasPanel: !!sr.panel, panel: sr.panel ? { title: sr.panel.title, text: sr.panel.text, desc: sr.panel.desc, img: sr.panel.img, hasImg: !!sr.panel.img, read: () => this.readWiki(sr.panel.title, sr.panel.lang) } : { title: '', text: '', desc: '', img: '', hasImg: false, read: () => {} },
+      google: () => this.openExternal(gUrl(sr.q)), gHref: gUrl(sr.q),
+      canAsk: !!this.sampleFn && !sr.ai, ask: () => this.searchAsk(),
+      hasAi: !!sr.ai, aiText: sr.ai ? sr.ai.text : '', aiBusy: !!(sr.ai && sr.ai.busy && !sr.ai.text), aiErr: sr.ai ? sr.ai.err || '' : '',
+      retry: () => this.searchWeb(sr.q)
+    };
+    const wkv = {
+      on: isWiki, title: wk.title, loading: wk.status === 'loading', offline: wk.status === 'offline', none: wk.status === 'none',
+      paras: wk.paras.map((t) => ({ t, head: t.length < 60 && !/[.!?:]$/.test(t), body: !(t.length < 60 && !/[.!?:]$/.test(t)) })),
+      href: 'https://' + wk.lang + '.wikipedia.org/wiki/' + encodeURIComponent(String(wk.title).replace(/ /g, '_')), open: () => this.openExternal('https://' + wk.lang + '.wikipedia.org/wiki/' + encodeURIComponent(String(wk.title).replace(/ /g, '_')))
+    };
     const isHome = s.url === 'px://home';
     const web = {
       input: s.urlIn, onInput: (e) => this.setState({ urlIn: e.target.value }), onKey: (e) => { if (e.key === 'Enter') this.goUrl(s.urlIn); },
@@ -5694,7 +5826,7 @@ class Component extends DCLogic {
       isHome, gq: s.gq, onGq: (e) => this.setState({ gq: e.target.value }),
       onGqKey: (e) => { if (e.key === 'Enter' && s.gq.trim()) { this.goUrl(s.gq); this.setState({ gq: '' }); } },
       gSearch: () => { if (s.gq.trim()) { this.goUrl(s.gq); this.setState({ gq: '' }); } },
-      gHref: 'https://www.google.com/'
+      gHref: 'https://www.google.com/', pxs, wk: wkv
     };
 
     // MAIL
