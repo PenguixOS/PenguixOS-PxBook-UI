@@ -213,6 +213,61 @@ button,input,textarea{font-family:inherit}
 .px-panic{position:absolute;inset:0;z-index:1998;background:linear-gradient(160deg,#0B2A55,#123E7A 55%,#0A2246);color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:Manrope,system-ui,sans-serif;cursor:default}
 .px-panic-in{width:min(760px,86%);display:flex;flex-direction:column;gap:18px}
 .px-panic-peng{animation:panicWobble 2.4s ease-in-out infinite}@keyframes panicWobble{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
+.mc{position:absolute;inset:0;z-index:950;background:rgba(8,12,22,.55);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);display:flex;flex-direction:column;align-items:center;padding:40px 30px 50px;box-sizing:border-box;gap:26px}
+.mc-spaces{display:flex;gap:16px}.mc-sp{all:unset;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px}
+.mc-sp-screen{position:relative;display:block;width:150px;height:94px;border-radius:8px;overflow:hidden;box-shadow:0 0 0 2px rgba(255,255,255,.25)}
+.mc-sp.on .mc-sp-screen{box-shadow:0 0 0 3px var(--acc)}.mc-sp-l{color:#ffffff;font-size:12px;font-weight:700}
+.mc-grid{flex:1;width:100%;display:flex;flex-wrap:wrap;gap:26px;justify-content:center;align-content:center;overflow:auto}
+.mc-card{all:unset;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:8px;transition:transform .15s}.mc-card:hover{transform:scale(1.04)}
+.mc-thumb{position:relative;display:flex;align-items:center;justify-content:center;border-radius:10px;overflow:hidden;box-shadow:0 14px 40px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.2)}
+.mc-card:hover .mc-thumb{box-shadow:0 0 0 3px var(--acc),0 14px 40px rgba(0,0,0,.45)}
+.mc-tb{position:absolute;top:0;left:0;right:0;height:16px;background:rgba(0,0,0,.14);display:flex;gap:4px;align-items:center;padding-left:7px}
+.mc-tb i{width:6px;height:6px;border-radius:3px;background:rgba(0,0,0,.25)}
+.mc-name{color:#ffffff;font-size:13px;font-weight:700;text-shadow:0 1px 3px rgba(0,0,0,.5)}
+.sw-it{all:unset;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px;border-radius:14px;width:92px}
+.sw-it.on{background:rgba(255,255,255,.18)}.sw-l{font-size:11.5px;font-weight:700;opacity:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:90px}.sw-it.on .sw-l{opacity:1}
+.deskshow .win{opacity:0 !important;transform:scale(.92);pointer-events:none !important;transition:opacity .25s,transform .25s}
+.saver{position:absolute;inset:0;z-index:1985;overflow:hidden;cursor:none;color:#ffffff}
+.sv-peng{position:absolute;left:-170px;animation:svSwim linear infinite}@keyframes svSwim{from{left:-170px}to{left:calc(100% + 40px)}}
+.sv-bob{display:block;animation:svBob 1.8s ease-in-out infinite alternate}@keyframes svBob{from{transform:translateY(-12px) rotate(-5deg)}to{transform:translateY(12px) rotate(5deg)}}
+.sv-bub{position:absolute;bottom:-20px;border-radius:50%;border:1.5px solid rgba(255,255,255,.55);animation:svRise linear infinite}@keyframes svRise{0%{bottom:-20px;opacity:0}10%{opacity:.8}100%{bottom:105%;opacity:0}}
+.sv-au{position:absolute;width:70%;height:60%;border-radius:50%;filter:blur(80px);opacity:.75;animation:svAu 11s ease-in-out infinite alternate}@keyframes svAu{from{transform:translate(-12%,0) scale(1)}to{transform:translate(28%,12%) scale(1.35)}}
+.sv-star{position:absolute;width:2px;height:2px;border-radius:1px;background:#ffffff;animation:svTw 2.6s ease-in-out infinite alternate}@keyframes svTw{from{opacity:.2}to{opacity:1}}
+.sv-clock{position:absolute;left:15%;top:30%;animation:svDrift 46s ease-in-out infinite alternate}@keyframes svDrift{0%{left:8%;top:12%}33%{left:46%;top:52%}66%{left:20%;top:62%}100%{left:52%;top:18%}}
+.warp{position:absolute;inset:0;z-index:1992;background:radial-gradient(circle,#1a1446,#000000 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#ffffff;overflow:hidden}
+.warp-ring{position:absolute;left:50%;top:50%;width:40px;height:40px;margin:-20px 0 0 -20px;border-radius:50%;border:3px solid rgba(127,211,247,.85);animation:warpR 1.1s ease-out infinite}
+.warp-ring.r2{animation-delay:.28s;border-color:rgba(142,92,245,.85)}.warp-ring.r3{animation-delay:.56s;border-color:rgba(255,111,181,.85)}@keyframes warpR{from{transform:scale(.2);opacity:1}to{transform:scale(28);opacity:0}}
+.tm-card{background:rgba(255,255,255,0.07);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:8px;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.12)}
+.tm-card.on{box-shadow:inset 0 0 0 2px #7FD3F7;background:rgba(127,211,247,0.12)}
+.vm-screen{position:relative;flex:1;border-radius:10px;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,0.15),0 10px 30px rgba(0,0,0,.5)}
+.vm-ic{all:unset;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;width:76px;padding:6px 0;border-radius:10px;font-size:11px;font-weight:700;text-align:center}
+.vm-ic:hover{background:rgba(255,255,255,0.15)}.vm-ic span:first-child{font-size:30px;line-height:1}
+.vm-panel{position:absolute;left:12%;top:16%;width:76%;height:70%;border-radius:12px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 14px 40px rgba(0,0,0,.45)}
+.vm-item{all:unset;cursor:pointer;position:absolute;font-size:30px;line-height:1;animation:vmPop .25s ease-out}@keyframes vmPop{from{transform:scale(.2)}to{transform:scale(1)}}
+.vm-bar{width:160px;height:5px;border-radius:3px;background:rgba(255,255,255,.2);overflow:hidden}.vm-bar i{display:block;height:100%;background:#ffffff;animation:boot 2s ease-in-out both}
+.look-anky{--bg:#C3C3C3 !important;--side:#B5B5B5 !important;--card:#DCDCDC !important;--fg:#000000 !important;--sub:#333333 !important;--line:#808080 !important;--tbar:#C3C3C3 !important}
+.look-anky .win{border-radius:0 !important;box-shadow:inset -2px -2px 0 #404040,inset 2px 2px 0 #ffffff,0 0 0 1px #000000,6px 6px 0 rgba(0,0,0,.25) !important;font-family:'JetBrains Mono',ui-monospace,monospace !important}
+.look-anky .tbar{background:linear-gradient(90deg,#00307A,#2B6FD0) !important;color:#ffffff !important;border-radius:0 !important}
+.look-anky .dock,.look-anky .glass,.look-anky .dglass{border-radius:0 !important;background:#C3C3C3 !important;color:#000000 !important;box-shadow:inset -2px -2px 0 #404040,inset 2px 2px 0 #ffffff !important;-webkit-backdrop-filter:none !important;backdrop-filter:none !important;border:none !important}
+.look-anky .dk .ic,.look-anky .w-btn,.look-anky .w-btn2,.look-anky .w-inp,.look-anky .w-card,.look-anky .w-chip{border-radius:0 !important}
+.look-anky .w-btn,.look-anky .w-btn2{background:#C3C3C3 !important;color:#000000 !important;box-shadow:inset -2px -2px 0 #404040,inset 2px 2px 0 #ffffff !important}
+.look-anky .mbar{background:#C3C3C3 !important;color:#000000 !important;-webkit-backdrop-filter:none !important;backdrop-filter:none !important;box-shadow:inset 0 -2px 0 #808080}
+.look-anky .mbar svg,.look-anky .dglass svg[stroke="#ffffff"]{filter:invert(1)}.look-anky .mbar .mb{color:#000000}
+.look-raptor .tbar{background:linear-gradient(#F4F7FB,#C9D3DF 50%,#B7C3D1 51%,#DCE3EB) !important;color:#1B2635 !important}
+.look-raptor .win{border-radius:10px 10px 6px 6px !important;box-shadow:0 14px 36px rgba(0,0,0,.5),0 0 0 1px rgba(0,0,0,.35) !important}
+.look-raptor .dock{background:linear-gradient(rgba(255,255,255,.6),rgba(255,255,255,.18) 50%,rgba(255,255,255,.06) 51%,rgba(255,255,255,.32)) !important;border-radius:6px 6px 0 0 !important;box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 6px 20px rgba(0,0,0,.35) !important}
+.look-raptor .dk .ic{border-radius:12px !important;box-shadow:inset 0 12px 10px -6px rgba(255,255,255,.75),0 3px 6px rgba(0,0,0,.45) !important}
+.look-raptor .mbar{background:linear-gradient(#FDFDFD,#D9DEE5) !important;color:#111111 !important;-webkit-backdrop-filter:none !important;backdrop-filter:none !important}
+.look-raptor .mbar svg{filter:invert(1)}.look-raptor .mbar .mb{color:#111111}
+.look-raptor .w-btn{background:linear-gradient(#9BD7FF,#2A8BE8 50%,#1773D6 51%,#63B8FF) !important;color:#ffffff !important;border-radius:14px !important;box-shadow:inset 0 1px 0 rgba(255,255,255,.75),0 1px 3px rgba(0,0,0,.35) !important}
+.look-raptor .w-btn2{background:linear-gradient(#ffffff,#E4E9F0 50%,#D6DDE6 51%,#F2F5F8) !important;color:#1B2635 !important;border-radius:14px !important;box-shadow:inset 0 0 0 1px rgba(0,0,0,.2) !important}
+.look-juneau .glass,.look-juneau .dglass,.look-juneau .dock,.look-juneau .mbar{-webkit-backdrop-filter:none !important;backdrop-filter:none !important}
+.look-juneau .dock{background:rgba(28,32,42,.9) !important;border-radius:12px !important;border:none !important}
+.look-juneau .glass{background:rgba(28,32,42,.82) !important;border:none !important;box-shadow:none !important}
+.look-juneau .win{border-radius:4px !important;box-shadow:0 6px 18px rgba(0,0,0,.28) !important}
+.look-juneau .tbar{background:#2B7FE6 !important;color:#ffffff !important;border-bottom:none !important}
+.look-juneau .mbar{background:#1C202A !important}.look-juneau .dk .ic{border-radius:10px !important;box-shadow:none !important}
+.look-juneau .w-btn,.look-juneau .w-btn2,.look-juneau .w-card{border-radius:4px !important}
 .kcap{font-family:'JetBrains Mono',ui-monospace,monospace;font-weight:700;font-size:12px;background:var(--side);padding:3px 7px;border-radius:6px;box-shadow:inset 0 0 0 1px var(--line);white-space:nowrap}
 
 
@@ -269,6 +324,8 @@ button,input,textarea{font-family:inherit}
     <path d="M0 600 L150 470 L260 540 L420 380 L560 520 L700 430 L860 540 L1000 450 L1180 560 L1180 820 L0 820 Z" fill="{{wp.m1}}"></path>
     <path d="M0 680 L200 590 L360 650 L540 570 L720 640 L900 580 L1180 650 L1180 820 L0 820 Z" fill="{{wp.m2}}"></path>
   </svg>
+
+  <sc-if value="{{lookWall.on}}" hint-placeholder-val="{{ false }}"><div aria-hidden="true" style="{{lookWall.style}}"></div></sc-if>
 
   <!-- Desktop layer -->
   <div style="position: absolute; inset: 28px 0 0 0; z-index: 1" onContextMenu="{{onDeskMenu}}">
@@ -336,7 +393,7 @@ button,input,textarea{font-family:inherit}
   </div>
 
   <!-- WINDOWS -->
-  <div class="{{spCls}}" style="position: absolute; inset: 0; z-index: 5; pointer-events: none">
+  <div class="{{spCls}} {{deskCls}}" style="position: absolute; inset: 0; z-index: 5; pointer-events: none">
     <sc-if value="{{snapOn}}" hint-placeholder-val="{{ false }}">
       <div aria-hidden="true" class="fadein" style="{{snapStyle}}"></div>
     </sc-if>
@@ -442,21 +499,40 @@ button,input,textarea{font-family:inherit}
 
           <!-- 6 PXCHAT -->
           <sc-if value="{{w.is.chat}}" hint-placeholder-val="{{ false }}">
-            <div style="flex: 1; display: flex; flex-direction: column">
-              <div class="scr" style="flex: 1; display: flex; flex-direction: column-reverse; padding: 14px">
-                <div style="display: flex; flex-direction: column; gap: 8px">
-                  <sc-for list="{{chat.msgs}}" as="m" hint-placeholder-count="2">
-                    <div style="{{m.style}}">{{m.text}}</div>
-                  </sc-for>
-                  <sc-if value="{{chat.typing}}" hint-placeholder-val="{{ false }}">
-                    <div style="align-self: flex-start; background: var(--card); padding: 10px 14px; border-radius: 16px; display: flex; gap: 3px; align-items: center; height: 14px"><span class="eq"></span><span class="eq"></span><span class="eq"></span></div>
-                  </sc-if>
+            <div class="w-side" style="width: 196px">
+              <div class="w-lbl" style="margin: 2px 4px 6px">Chats</div>
+              <sc-for list="{{fch.threads}}" as="th" hint-placeholder-count="3"><button class="w-item {{th.cls}}" onClick="{{th.pick}}" style="gap: 8px"><span style="{{th.av}}">{{th.initials}}</span><span style="flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">{{th.name}}</span><sc-if value="{{th.online}}" hint-placeholder-val="{{ false }}"><span aria-label="online" style="width: 8px; height: 8px; border-radius: 4px; background: #2FB86E; flex: none"></span></sc-if></button></sc-for>
+              <div class="w-sub" style="margin-top: auto; padding: 6px 4px; font-size: 11px; line-height: 1.4">{{fch.status}}</div>
+            </div>
+            <div style="flex: 1; display: flex; flex-direction: column; min-width: 0">
+              <div style="padding: 9px 14px; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 8px"><b style="flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{fch.title}}</b><span class="w-sub" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 50%">{{fch.sub}}</span><sc-if value="{{fch.friend}}" hint-placeholder-val="{{ false }}"><button class="w-btn2" onClick="{{fch.drop}}">PxDrop</button></sc-if></div>
+              <sc-if value="{{fch.bot}}" hint-placeholder-val="{{ true }}">
+                <div class="scr" style="flex: 1; display: flex; flex-direction: column-reverse; padding: 14px">
+                  <div style="display: flex; flex-direction: column; gap: 8px">
+                    <sc-for list="{{chat.msgs}}" as="m" hint-placeholder-count="2"><div style="{{m.style}}">{{m.text}}</div></sc-for>
+                    <sc-if value="{{chat.typing}}" hint-placeholder-val="{{ false }}"><div style="align-self: flex-start; background: var(--card); padding: 10px 14px; border-radius: 16px; font-weight: 800; letter-spacing: 2px">…</div></sc-if>
+                  </div>
                 </div>
-              </div>
-              <div style="display: flex; gap: 8px; padding: 10px; border-top: 1px solid var(--line)">
-                <input class="w-inp" style="flex: 1" aria-label="Message" placeholder="Message Penguix Bot" value="{{chat.draft}}" onChange="{{chat.onDraft}}" onKeyDown="{{chat.onKey}}">
-                <button class="w-btn" onClick="{{chat.send}}">Send</button>
-              </div>
+                <div style="display: flex; gap: 8px; padding: 10px; border-top: 1px solid var(--line)">
+                  <input class="w-inp" style="flex: 1" aria-label="Message" placeholder="Message Penguix Bot" value="{{chat.draft}}" onChange="{{chat.onDraft}}" onKeyDown="{{chat.onKey}}">
+                  <button class="w-btn" onClick="{{chat.send}}">Send</button>
+                </div>
+              </sc-if>
+              <sc-if value="{{fch.friend}}" hint-placeholder-val="{{ false }}">
+                <div class="scr" style="flex: 1; display: flex; flex-direction: column-reverse; padding: 14px">
+                  <div style="display: flex; flex-direction: column; gap: 8px">
+                    <sc-if value="{{fch.empty}}" hint-placeholder-val="{{ false }}"><div class="w-sub" style="text-align: center; padding: 20px">No messages yet. Say hi!</div></sc-if>
+                    <sc-for list="{{fch.msgs}}" as="m" hint-placeholder-count="2">
+                      <sc-if value="{{m.showFrom}}" hint-placeholder-val="{{ false }}"><div class="w-sub" style="font-size: 11px; margin-bottom: -5px; padding-left: 4px">{{m.from}}</div></sc-if>
+                      <div style="{{m.style}}">{{m.text}}</div>
+                    </sc-for>
+                  </div>
+                </div>
+                <div style="display: flex; gap: 8px; padding: 10px; border-top: 1px solid var(--line)">
+                  <input class="w-inp" style="flex: 1" aria-label="Message friends" placeholder="{{fch.ph}}" maxlength="400" value="{{fch.draft}}" onChange="{{fch.onDraft}}" onKeyDown="{{fch.onKey}}">
+                  <button class="w-btn" onClick="{{fch.send}}">Send</button>
+                </div>
+              </sc-if>
             </div>
           </sc-if>
 
@@ -703,6 +779,8 @@ button,input,textarea{font-family:inherit}
                     <div style="font-weight: 800">{{files.sel.name}}</div>
                     <div class="w-sub" style="white-space: pre-line; margin-top: 4px; max-height: 70px; overflow: hidden">{{files.sel.preview}}</div>
                   </div>
+                  <button class="w-btn2" onClick="{{files.ql}}" title="Quick Look (Space)">Quick Look</button>
+                  <button class="w-btn2" onClick="{{files.drop}}">PxDrop</button>
                   <button class="w-btn2" onClick="{{files.openSel}}">Open</button>
                   <button class="w-btn2" onClick="{{files.del}}" style="color: #E5543F">Move to Trash</button>
                 </div>
@@ -724,6 +802,7 @@ button,input,textarea{font-family:inherit}
             <div style="flex: 1; display: flex; flex-direction: column; padding: 14px; gap: 8px; min-width: 0">
               <div style="display: flex; gap: 8px">
                 <input class="w-inp" aria-label="Note title" style="flex: 1; font-size: 16px; font-weight: 800" value="{{notes.cur.title}}" onChange="{{notes.onTitle}}">
+                <button class="w-btn2" onClick="{{notes.drop}}" title="Send this note to a friend">PxDrop</button>
                 <button class="w-btn2" onClick="{{notes.del}}" style="color: #E5543F">Delete</button>
               </div>
               <textarea aria-label="Note text" value="{{notes.cur.body}}" onChange="{{notes.onBody}}" style="flex: 1; resize: none; border: none; outline: none; background: transparent; color: var(--fg); font-size: 15px; line-height: 1.6"></textarea>
@@ -1852,6 +1931,79 @@ button,input,textarea{font-family:inherit}
             </div>
           </sc-if>
 
+          <!-- 64 PXTIME MACHINE -->
+          <sc-if value="{{w.is.timemachine}}" hint-placeholder-val="{{ false }}">
+            <div class="scr" style="flex: 1; padding: 18px; display: flex; flex-direction: column; gap: 16px; background: linear-gradient(180deg, #0E1530, #1B2450); color: #ffffff">
+              <div><div style="font-size: 22px; font-weight: 800">PxTime Machine</div><div style="opacity: .75; font-size: 13px">Travel back through PenguixOS history. Your apps and files stay the same; only the look changes.</div></div>
+              <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; position: relative">
+                <sc-for list="{{tmv.vers}}" as="v" hint-placeholder-count="4">
+                  <div class="tm-card {{v.cls}}">
+                    <div style="{{v.prev}}"><span style="{{v.pwin}}"><span style="{{v.pbar}}"></span></span><span style="{{v.pdock}}"></span></div>
+                    <div style="display: flex; align-items: center; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 5px; background: {{v.c}}; flex: none"></span><b style="font-size: 15px">{{v.name}}</b></div>
+                    <div style="font-size: 11px; opacity: .7; font-weight: 700">{{v.era}}</div>
+                    <div style="font-size: 12px; opacity: .85; line-height: 1.4; min-height: 50px">{{v.desc}}</div>
+                    <button class="su-chip {{v.btnCls}}" onClick="{{v.go}}" style="min-height: 32px; font-size: 12px">{{v.btn}}</button>
+                  </div>
+                </sc-for>
+              </div>
+              <div style="font-size: 12px; opacity: .7">Tip: the old looks change windows, the Dock, the menu bar and buttons. Travel back to {{tmv.nowName}} any time.</div>
+            </div>
+          </sc-if>
+
+          <!-- 65 PXVIRTUAL -->
+          <sc-if value="{{w.is.virtual}}" hint-placeholder-val="{{ false }}">
+            <div style="flex: 1; display: flex; flex-direction: column; min-width: 0; min-height: 0">
+              <sc-if value="{{vmv.idle}}" hint-placeholder-val="{{ true }}">
+                <div class="scr" style="flex: 1; padding: 18px; display: flex; flex-direction: column; gap: 14px">
+                  <div><div style="font-size: 20px; font-weight: 800">PxVirtual</div><div class="w-sub">Run other operating systems from the PenguixOS universe inside a window. Nothing is installed on your device.</div></div>
+                  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
+                    <sc-for list="{{vmv.list}}" as="o" hint-placeholder-count="2">
+                      <div class="w-card" style="display: flex; flex-direction: column; gap: 10px; padding: 16px">
+                        <div style="{{o.prev}}"><span style="font-size: 34px">{{o.emoji}}</span><b style="color: #ffffff; font-size: 15px">{{o.name}}</b></div>
+                        <div style="font-weight: 800; font-size: 16px">{{o.name}}</div>
+                        <div class="w-sub">{{o.desc}}</div>
+                        <div class="w-sub" style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px">{{o.spec}}</div>
+                        <button class="w-btn" onClick="{{o.start}}" style="align-self: flex-start">▶ Start</button>
+                      </div>
+                    </sc-for>
+                  </div>
+                </div>
+              </sc-if>
+              <sc-if value="{{vmv.running}}" hint-placeholder-val="{{ false }}">
+                <div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-bottom: 1px solid var(--line)"><span style="width: 8px; height: 8px; border-radius: 4px; background: #2FB86E"></span><b style="flex: 1">{{vmv.name}} · running in PxVirtual</b><button class="w-btn2" onClick="{{vmv.restart}}">Restart</button><button class="w-btn2" onClick="{{vmv.stop}}" style="color: #D63B2F">Shut down</button></div>
+                <div style="flex: 1; min-height: 0; padding: 12px; display: flex; background: #11141C">
+                  <div class="vm-screen" style="{{vmv.screen}}">
+                    <sc-if value="{{vmv.boot}}" hint-placeholder-val="{{ false }}">
+                      <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; color: #ffffff"><span style="font-size: 64px">{{vmv.emoji}}</span><b style="font-size: 22px; letter-spacing: 2px">{{vmv.name}}</b><span class="vm-bar"><i></i></span></div>
+                    </sc-if>
+                    <sc-if value="{{vmv.desk}}" hint-placeholder-val="{{ false }}">
+                      <div style="{{vmv.topbar}}"><b>{{vmv.emoji}} {{vmv.name}}</b><span style="flex: 1"></span><span>{{vmv.clock}}</span></div>
+                      <div style="position: absolute; top: 40px; left: 14px; display: flex; flex-direction: column; gap: 6px; color: {{vmv.icColor}}">
+                        <sc-for list="{{vmv.apps}}" as="a" hint-placeholder-count="4"><button class="vm-ic" onClick="{{a.open}}"><span>{{a.emoji}}</span><span>{{a.name}}</span></button></sc-for>
+                      </div>
+                      <sc-if value="{{vmv.hasApp}}" hint-placeholder-val="{{ false }}">
+                        <div class="vm-panel" style="{{vmv.panel}}">
+                          <div style="display: flex; align-items: center; padding: 8px 12px; gap: 8px; {{vmv.panelHead}}"><b style="flex: 1">{{vmv.appTitle}}</b><button class="plain" onClick="{{vmv.closeApp}}" aria-label="Close" style="cursor: pointer; font-weight: 800; padding: 0 6px">✕</button></div>
+                          <sc-if value="{{vmv.isNotes}}" hint-placeholder-val="{{ false }}"><textarea aria-label="{{vmv.appTitle}}" value="{{vmv.note}}" onChange="{{vmv.onNote}}" placeholder="Write something…" style="flex: 1; resize: none; border: none; outline: none; background: transparent; color: inherit; font-size: 14px; line-height: 1.6; padding: 10px 14px; font-family: inherit"></textarea></sc-if>
+                          <sc-if value="{{vmv.isClock}}" hint-placeholder-val="{{ false }}"><div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center"><div style="font-size: 54px; font-weight: 800">{{vmv.clock}}</div><div style="opacity: .75">{{desk.longDate}}</div></div></sc-if>
+                          <sc-if value="{{vmv.isAbout}}" hint-placeholder-val="{{ false }}"><div style="flex: 1; padding: 12px 16px; font-size: 13px; line-height: 1.6; overflow: auto"><sc-for list="{{vmv.about}}" as="p" hint-placeholder-count="2"><p style="margin: 0 0 8px">{{p}}</p></sc-for></div></sc-if>
+                          <sc-if value="{{vmv.isGame}}" hint-placeholder-val="{{ false }}">
+                            <div style="display: flex; align-items: center; gap: 10px; padding: 6px 12px; font-size: 13px; font-weight: 700"><span>Score: {{vmv.score}}</span><span style="flex: 1">{{vmv.timeLeft}}</span><button class="su-chip on" onClick="{{vmv.play}}" style="min-height: 28px; font-size: 12px">{{vmv.playLabel}}</button></div>
+                            <div style="position: relative; flex: 1; overflow: hidden">
+                              <sc-for list="{{vmv.items}}" as="it" hint-placeholder-count="2"><button class="vm-item" onClick="{{it.hit}}" aria-label="Catch" style="{{it.style}}">{{vmv.itemEmoji}}</button></sc-for>
+                              <sc-if value="{{vmv.over}}" hint-placeholder-val="{{ false }}"><div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 800; text-align: center">Time's up! You caught {{vmv.score}}.</div></sc-if>
+                              <sc-if value="{{vmv.ready}}" hint-placeholder-val="{{ false }}"><div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 14px; opacity: .8; text-align: center; padding: 10px">{{vmv.gameHint}}</div></sc-if>
+                            </div>
+                          </sc-if>
+                        </div>
+                      </sc-if>
+                    </sc-if>
+                  </div>
+                </div>
+              </sc-if>
+            </div>
+          </sc-if>
+
           <!-- 30 PXTRASH -->
           <sc-if value="{{w.is.trash}}" hint-placeholder-val="{{ false }}">
             <div style="flex: 1; display: flex; flex-direction: column; padding: 14px; gap: 10px">
@@ -2130,8 +2282,15 @@ button,input,textarea{font-family:inherit}
   <sc-if value="{{lockOpen}}" hint-placeholder-val="{{ false }}">
     <div class="fadein" style="position: absolute; inset: 0; z-index: 1500; background: rgba(5,8,15,0.35); -webkit-backdrop-filter: blur(30px); backdrop-filter: blur(30px); display: flex; flex-direction: column; align-items: center; color: #ffffff; padding-top: 70px">
       <div style="font-size: 18px; font-weight: 700; opacity: .9">{{desk.longDate}}</div>
-      <div style="font-size: 110px; font-weight: 800; letter-spacing: -5px; line-height: 1">{{clockStr}}</div>
-      <span class="floaty" style="width: 96px; height: 96px; border-radius: 48px; background: var(--acc); color: #0B1A2E; font-size: 36px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-top: 110px; box-shadow: 0 12px 30px rgba(0,0,0,0.35)">{{acct.initials}}</span>
+      <div style="{{lockv.clockStyle}}">{{clockStr}}</div>
+      <sc-if value="{{lockv.widgets}}" hint-placeholder-val="{{ true }}">
+        <div style="display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; justify-content: center">
+          <span class="glass" style="border-radius: 14px; padding: 7px 12px; font-size: 13px; font-weight: 700">☁ {{lockv.wx}}</span>
+          <span class="glass" style="border-radius: 14px; padding: 7px 12px; font-size: 13px; font-weight: 700">🔋 {{lockv.bat}}</span>
+          <span class="glass" style="border-radius: 14px; padding: 7px 12px; font-size: 13px; font-weight: 700; max-width: 240px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">✓ {{lockv.todo}}</span>
+        </div>
+      </sc-if>
+      <span class="floaty" style="width: 96px; height: 96px; border-radius: 48px; background: var(--acc); color: #0B1A2E; font-size: 36px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-top: {{lockv.avTop}}; box-shadow: 0 12px 30px rgba(0,0,0,0.35)">{{acct.initials}}</span>
       <div style="font-size: 20px; font-weight: 800; margin-top: 14px">{{acct.name}}</div>
       <div style="font-size: 14px; font-weight: 600; opacity: .8; font-family: Manrope, 'Noto Serif Tibetan', 'Noto Naskh Arabic', system-ui, sans-serif">{{acct.greet}}</div>
       <sc-if value="{{lk.guest}}" hint-placeholder-val="{{ false }}">
@@ -2395,6 +2554,102 @@ button,input,textarea{font-family:inherit}
       <div style="font-size: 14px; font-weight: 700">PxBook is turned off</div>
       <div style="font-size: 12px">Press the power button to turn it on</div>
     </div>
+  </sc-if>
+
+  <!-- MISSION CONTROL -->
+  <sc-if value="{{mcv.on}}" hint-placeholder-val="{{ false }}">
+    <div class="mc fadein" role="dialog" aria-label="Mission Control" onClick="{{mcv.bg}}" onPointerDown="{{stopProp}}">
+      <div class="mc-spaces">
+        <sc-for list="{{mcv.spaces}}" as="sp" hint-placeholder-count="3">
+          <button class="mc-sp {{sp.cls}}" onClick="{{sp.go}}" aria-label="Go to {{sp.name}}"><span class="mc-sp-screen" style="{{sp.bg}}"><sc-for list="{{sp.wins}}" as="r" hint-placeholder-count="1"><span style="{{r}}"></span></sc-for></span><span class="mc-sp-l">{{sp.name}}</span></button>
+        </sc-for>
+      </div>
+      <div class="mc-grid">
+        <sc-for list="{{mcv.wins}}" as="w" hint-placeholder-count="3">
+          <button class="mc-card" onClick="{{w.go}}" aria-label="{{w.name}}">
+            <span class="mc-thumb" style="{{w.thumb}}"><span class="mc-tb"><i></i><i></i><i></i></span><span class="ico" style="width: 60px; height: 60px; border-radius: 16px; background: {{w.c}}"><svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="{{w.d}}"></path></svg></span></span>
+            <span class="mc-name">{{w.name}}{{w.tag}}</span>
+          </button>
+        </sc-for>
+        <sc-if value="{{mcv.none}}" hint-placeholder-val="{{ false }}"><div style="color: #ffffff; opacity: .85; font-weight: 700">No windows in this space. Open an app from the Dock.</div></sc-if>
+      </div>
+      <div style="position: absolute; bottom: 14px; left: 0; right: 0; text-align: center; color: rgba(255,255,255,0.75); font-size: 12px; font-weight: 600">Mission Control · ⌃↑ or F3 · click a window to go to it · Esc to close</div>
+    </div>
+  </sc-if>
+
+  <!-- APP SWITCHER -->
+  <sc-if value="{{swv.on}}" hint-placeholder-val="{{ false }}">
+    <div class="dglass fadein" role="listbox" aria-label="App switcher" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 1650; border-radius: 22px; padding: 14px; display: flex; gap: 6px; color: #ffffff; max-width: 92%; flex-wrap: wrap; justify-content: center">
+      <sc-for list="{{swv.items}}" as="a" hint-placeholder-count="3"><button class="sw-it {{a.cls}}" role="option" aria-selected="{{a.on}}" onClick="{{a.go}}" aria-label="{{a.name}}"><span class="ico" style="width: 72px; height: 72px; border-radius: 18px; background: {{a.c}}"><svg aria-hidden="true" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="{{a.d}}"></path></svg></span><span class="sw-l">{{a.name}}</span></button></sc-for>
+    </div>
+  </sc-if>
+
+  <!-- QUICK LOOK -->
+  <sc-if value="{{qlv.on}}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{qlv.bg}}" onPointerDown="{{stopProp}}" style="position: absolute; inset: 0; z-index: 1640; background: rgba(0,0,0,0.25); display: flex; align-items: center; justify-content: center">
+      <div class="dglass zoomin" role="dialog" aria-label="Quick Look: {{qlv.name}}" style="width: 600px; max-width: 90%; height: 470px; max-height: 80%; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; color: #ffffff">
+        <div style="display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,0.12)">
+          <span style="width: 28px; height: 34px; border-radius: 5px; background: {{qlv.color}}; font-size: 8px; font-weight: 800; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 3px; box-sizing: border-box; flex: none">{{qlv.ext}}</span>
+          <span style="flex: 1; min-width: 0"><b style="display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{qlv.name}}</b><span style="display: block; font-size: 11px; opacity: .7">{{qlv.meta}}</span></span>
+          <button class="su-chip" onClick="{{qlv.open}}" style="min-height: 30px; font-size: 12px">Open</button>
+          <button class="su-chip" onClick="{{qlv.close}}" aria-label="Close Quick Look" style="min-height: 30px; font-size: 12px">✕</button>
+        </div>
+        <div class="scr" style="flex: 1; padding: 18px 22px; white-space: pre-wrap; word-break: break-word; font-size: 14px; line-height: 1.6; overflow: auto">{{qlv.body}}</div>
+        <div style="font-size: 11px; opacity: .6; padding: 6px 14px 10px">Quick Look · Space or Esc to close</div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- PXDROP -->
+  <sc-if value="{{dsv.on}}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{dsv.bg}}" onPointerDown="{{stopProp}}" style="position: absolute; inset: 0; z-index: 1620; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center">
+      <div class="dglass zoomin" role="dialog" aria-label="PxDrop" style="width: 430px; max-width: 90%; border-radius: 20px; padding: 18px; color: #ffffff; display: flex; flex-direction: column; gap: 12px">
+        <div style="display: flex; align-items: center; gap: 10px"><span class="ico" style="width: 42px; height: 42px; border-radius: 21px; background: linear-gradient(135deg, #2B7FE6, #2FB86E)"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"></path></svg></span><span style="flex: 1; min-width: 0"><b style="font-size: 16px">PxDrop</b><span style="display: block; font-size: 12px; opacity: .75; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Send "{{dsv.title}}" to a friend</span></span></div>
+        <sc-if value="{{dsv.live}}" hint-placeholder-val="{{ false }}">
+          <div style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; padding: 6px 0">
+            <sc-for list="{{dsv.friends}}" as="f" hint-placeholder-count="2"><button class="plain" onClick="{{f.send}}" aria-label="Send to {{f.name}}" style="display: flex; flex-direction: column; align-items: center; gap: 6px; width: 84px; cursor: pointer"><span style="{{f.av}}">{{f.initials}}</span><span style="font-size: 12px; font-weight: 700; max-width: 84px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{f.name}}</span></button></sc-for>
+          </div>
+          <sc-if value="{{dsv.none}}" hint-placeholder-val="{{ false }}"><div style="text-align: center; opacity: .85; font-size: 13px">No friends online right now. Ask a friend to open your shared PxBook page.</div></sc-if>
+        </sc-if>
+        <sc-if value="{{dsv.off}}" hint-placeholder-val="{{ true }}"><div style="font-size: 13px; opacity: .85; line-height: 1.5">PxDrop works when you and your friends open the shared PxBook page in the Claude app. Here, PxBook can't connect to anyone.</div></sc-if>
+        <div style="display: flex; justify-content: flex-end"><button class="su-chip" onClick="{{dsv.close}}" style="min-height: 32px; font-size: 12px">Cancel</button></div>
+      </div>
+    </div>
+  </sc-if>
+  <sc-if value="{{dIn.on}}" hint-placeholder-val="{{ false }}">
+    <div class="dglass slidein" role="alertdialog" aria-label="PxDrop from {{dIn.from}}" onPointerDown="{{stopProp}}" style="position: absolute; right: 14px; top: 40px; width: 340px; z-index: 1625; border-radius: 18px; padding: 14px; color: #ffffff; display: flex; flex-direction: column; gap: 8px">
+      <div style="display: flex; gap: 10px; align-items: center"><span style="{{dIn.av}}">{{dIn.initials}}</span><span style="flex: 1; min-width: 0; font-size: 13px"><b>{{dIn.from}}</b> wants to PxDrop you {{dIn.what}}</span></div>
+      <div style="background: rgba(255,255,255,0.08); border-radius: 10px; padding: 8px 10px"><div style="font-weight: 800">{{dIn.title}}</div><div style="font-size: 12px; opacity: .8; max-height: 62px; overflow: hidden; white-space: pre-wrap">{{dIn.preview}}</div></div>
+      <div style="display: flex; gap: 8px; justify-content: flex-end"><button class="su-chip" onClick="{{dIn.no}}" style="min-height: 32px; font-size: 12px">Decline</button><button class="su-chip on" onClick="{{dIn.yes}}" style="min-height: 32px; font-size: 12px">Accept</button></div>
+    </div>
+  </sc-if>
+  <sc-if value="{{dOut.on}}" hint-placeholder-val="{{ false }}">
+    <div class="dglass fadein" role="status" style="position: absolute; left: 14px; bottom: 100px; z-index: 1620; border-radius: 14px; padding: 10px 12px 10px 14px; color: #ffffff; font-size: 13px; display: flex; gap: 10px; align-items: center"><span>{{dOut.text}}</span><button class="su-chip" onClick="{{dOut.close}}" style="min-height: 26px; font-size: 11px; padding: 0 10px">OK</button></div>
+  </sc-if>
+
+  <!-- SCREEN SAVER -->
+  <sc-if value="{{sv2.on}}" hint-placeholder-val="{{ false }}">
+    <div class="saver fadein" role="img" aria-label="Screen saver. Move the pointer or press a key to stop." onPointerDown="{{sv2.stop}}" style="{{sv2.bg}}">
+      <sc-if value="{{sv2.peng}}" hint-placeholder-val="{{ false }}">
+        <sc-for list="{{sv2.bubbles}}" as="b" hint-placeholder-count="3"><span class="sv-bub" style="{{b}}"></span></sc-for>
+        <sc-for list="{{sv2.pengs}}" as="p" hint-placeholder-count="2"><div class="sv-peng" style="{{p}}"><svg class="sv-bob" aria-hidden="true" width="120" height="60" viewBox="0 0 120 60"><ellipse cx="58" cy="32" rx="46" ry="18" fill="#0B1A2E"></ellipse><ellipse cx="62" cy="38" rx="34" ry="11" fill="#ffffff"></ellipse><circle cx="94" cy="26" r="3" fill="#ffffff"></circle><circle cx="95" cy="26" r="1.5" fill="#0B1A2E"></circle><path d="M102 30l14 3-14 3z" fill="#F2B045"></path><path d="M40 22q-10-14-22-12 6 10 14 16z" fill="#0B1A2E"></path><path d="M14 30l-12-8 4 10-4 10z" fill="#0B1A2E"></path></svg></div></sc-for>
+      </sc-if>
+      <sc-if value="{{sv2.aurora}}" hint-placeholder-val="{{ false }}">
+        <sc-for list="{{sv2.stars}}" as="st" hint-placeholder-count="3"><span class="sv-star" style="{{st}}"></span></sc-for>
+        <span class="sv-au" style="left: 0; top: 5%; background: #2FB86E"></span>
+        <span class="sv-au" style="left: 25%; top: 0; background: #7FD3F7; animation-delay: -4s"></span>
+        <span class="sv-au" style="left: 45%; top: 12%; background: #8E5CF5; animation-delay: -7s"></span>
+      </sc-if>
+      <sc-if value="{{sv2.clock}}" hint-placeholder-val="{{ false }}">
+        <div class="sv-clock"><div style="font-size: 120px; font-weight: 800; letter-spacing: -5px; line-height: 1">{{clockStr}}</div><div style="font-size: 18px; font-weight: 700; opacity: .8">{{desk.longDate}}</div></div>
+      </sc-if>
+      <div style="position: absolute; bottom: 18px; left: 0; right: 0; text-align: center; font-size: 12px; opacity: .45">PenguixOS screen saver · move the pointer or press a key</div>
+    </div>
+  </sc-if>
+
+  <!-- TIME MACHINE WARP -->
+  <sc-if value="{{tmv.warp}}" hint-placeholder-val="{{ false }}">
+    <div class="warp fadein" aria-live="polite"><div class="warp-ring"></div><div class="warp-ring r2"></div><div class="warp-ring r3"></div><div style="position: relative; font-size: 30px; font-weight: 800">{{tmv.warpTo}}</div><div style="position: relative; opacity: .75">Traveling through PenguixOS history…</div></div>
   </sc-if>
 
   <!-- ERROR SCREEN -->
@@ -2805,7 +3060,7 @@ var PXB_APPS = [
 ];
 var PXB_APP = {};
 PXB_APPS.forEach(function (a) { PXB_APP[a.id] = a; });
-var PXB_SIZE = { intel: [480, 620], settings: [880, 620], update: [560, 560], clips: [580, 460], calc: [300, 470], piano: [660, 300], terminal: [740, 470], clock: [580, 420], memory: [440, 500], games: [400, 500], fit: [440, 470], convert: [460, 240], weather: [520, 460], official: [460, 540], settings: [580, 660], mail: [800, 480], files: [700, 440], notes: [680, 440], photos: [640, 460], music: [660, 440], calendar: [720, 470], browser: [780, 500], contacts: [620, 440], activity: [520, 480], trash: [480, 380], maps: [660, 480], todo: [440, 460], translate: [520, 480], chat: [440, 520], store: [640, 500], news: [720, 460], nz: [560, 540], paint: [720, 500] };
+var PXB_SIZE = { timemachine: [820, 500], virtual: [780, 580], intel: [480, 620], settings: [880, 620], update: [560, 560], clips: [580, 460], calc: [300, 470], piano: [660, 300], terminal: [740, 470], clock: [580, 420], memory: [440, 500], games: [400, 500], fit: [440, 470], convert: [460, 240], weather: [520, 460], official: [460, 540], settings: [580, 660], mail: [800, 480], files: [700, 440], notes: [680, 440], photos: [640, 460], music: [660, 440], calendar: [720, 470], browser: [780, 500], contacts: [620, 440], activity: [520, 480], trash: [480, 380], maps: [660, 480], todo: [440, 460], translate: [520, 480], chat: [440, 520], store: [640, 500], news: [720, 460], nz: [560, 540], paint: [720, 500] };
 var PXB_DOCK = ['files', 'browser', 'mail', 'chat', 'photos', 'music', 'notes', 'calendar', 'maps', 'terminal', 'store', 'settings', 'intel', 'apps'];
 var PXB_TRACKS = [
   { name: 'PX Glass Lounge', d: 168, g: 'linear-gradient(135deg,#7FD3F7,#5B3FC4)' },
@@ -2866,7 +3121,7 @@ var PXB_PAGES = {
   'px://news': { title: 'Px News', paras: PXB_NEWS.map(function (n) { return n.title + ' — ' + n.time; }), links: [['Open the Px News app', 'app:news'], ['Back to start', 'px://home']] },
   'px://tibet': { title: 'PenguixOS Tibet', paras: ['PenguixOS Tibet is the Tibetan project of PenguixOS.', 'PenguixOS supports English, Tibetan, Uyghur and Mongolian. Try PxTranslate for a phrasebook.'], links: [['Open PxTranslate', 'app:translate'], ['Back to start', 'px://home']] },
   'px://universe': { title: 'The teamwork OS universe', paras: ['PenguixOS is part of a teamwork OS universe alongside SigeonOS and MeowlOS.'], links: [['PenguixOS', 'px://penguixos'], ['Back to start', 'px://home']] },
-  'px://help': { title: 'PxBook Help', paras: ['Drag a window by its title bar. Drag the bottom-right corner to resize it. Double-click the title bar to maximize.', 'Click the penguin in the top-left for the PenguixOS menu. The sliders icon in the top-right opens Control Center, and the magnifier opens PX Search.', 'Right-click the desktop for quick actions. Px Apps shows all 63 apps.', 'Pick a help topic below, or open the Help menu for more.'], links: [['Windows and snapping', 'px://help/windows'], ['Spaces', 'px://help/spaces'], ['PxFind', 'px://help/find'], ['Notifications and widgets', 'px://help/notifications'], ['Users and Guest', 'px://help/users'], ['Languages', 'px://help/languages'], ['Themes', 'px://help/themes'], ['PxClips', 'px://help/clips'], ['Timer alarms', 'px://help/alarms'], ['Saving and backups', 'px://help/saving'], ['Back to start', 'px://home']] },
+  'px://help': { title: 'PxBook Help', paras: ['Drag a window by its title bar. Drag the bottom-right corner to resize it. Double-click the title bar to maximize.', 'Click the penguin in the top-left for the PenguixOS menu. The sliders icon in the top-right opens Control Center, and the magnifier opens PX Search.', 'Right-click the desktop for quick actions. Px Apps shows all 65 apps.', 'Pick a help topic below, or open the Help menu for more.'], links: [['Windows and snapping', 'px://help/windows'], ['Spaces', 'px://help/spaces'], ['PxFind', 'px://help/find'], ['Notifications and widgets', 'px://help/notifications'], ['Users and Guest', 'px://help/users'], ['Languages', 'px://help/languages'], ['Themes', 'px://help/themes'], ['PxClips', 'px://help/clips'], ['Timer alarms', 'px://help/alarms'], ['Saving and backups', 'px://help/saving'], ['Back to start', 'px://home']] },
   'px://help/windows': { title: 'Windows and snapping', paras: ['Drag a window by its title bar. Drag any edge or corner to resize it.', 'Drag a window to the left or right edge of the screen to fill half of it. Drag it to a corner to fill a quarter, or to the top to fill the screen.', 'The Window menu can tile, center, cascade or arrange every window side by side. ⌥⇧⌘← and ⌥⇧⌘→ tile the front window.'], links: [['All help topics', 'px://help']] },
   'px://help/spaces': { title: 'Spaces', paras: ['PxBook has three desktops called Work, Games and School. Each one keeps its own windows.', 'Switch with the 1 2 3 buttons in the menu bar, Ctrl ← →, or ⌥⌘ ← →.', 'Move the front window to another space from the Window menu or the app menu.'], links: [['All help topics', 'px://help']] },
   'px://help/find': { title: 'PxFind', paras: ['Press ⌘K or Ctrl Space to open PxFind.', 'Type an app, a note, a file, a to-do, a clip or a setting like "dark mode". Use ↑ ↓ to choose and Enter to open.', 'Type math like 12*(3+4) to get the answer straight away.'], links: [['All help topics', 'px://help']] },
@@ -3096,6 +3351,9 @@ var PXB_SET = [
   ['saving', 'Backup & Saving', '#2FB86E', 'M7 18h10a4.5 4.5 0 0 0 .8-8.9A6 6 0 0 0 6.3 10.2 4 4 0 0 0 7 18zM9.5 13l2 2 3.5-3.5', 'backup code restore save'],
   ['about', 'About', '#8A93A3', 'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 11v5M12 8h.01', 'version device info']
 ];
+var PXB_SV_PENG = ['top: 40%; animation-duration: 29s; animation-delay: -17s', 'top: 66%; animation-duration: 30s; animation-delay: -24s', 'top: 41%; animation-duration: 23s; animation-delay: -16s', 'top: 66%; animation-duration: 25s; animation-delay: -6s', 'top: 23%; animation-duration: 28s; animation-delay: -16s', 'top: 42%; animation-duration: 26s; animation-delay: -19s'];
+var PXB_SV_BUB = ['left: 25%; width: 18px; height: 18px; animation-duration: 8s; animation-delay: -14s', 'left: 20%; width: 10px; height: 10px; animation-duration: 8s; animation-delay: -1s', 'left: 52%; width: 15px; height: 15px; animation-duration: 14s; animation-delay: -5s', 'left: 3%; width: 15px; height: 15px; animation-duration: 15s; animation-delay: -2s', 'left: 6%; width: 6px; height: 6px; animation-duration: 10s; animation-delay: -7s', 'left: 5%; width: 15px; height: 15px; animation-duration: 14s; animation-delay: -10s', 'left: 77%; width: 13px; height: 13px; animation-duration: 10s; animation-delay: -7s', 'left: 39%; width: 16px; height: 16px; animation-duration: 14s; animation-delay: -0s', 'left: 12%; width: 16px; height: 16px; animation-duration: 14s; animation-delay: -8s', 'left: 72%; width: 12px; height: 12px; animation-duration: 8s; animation-delay: -8s', 'left: 31%; width: 11px; height: 11px; animation-duration: 15s; animation-delay: -9s', 'left: 10%; width: 6px; height: 6px; animation-duration: 16s; animation-delay: -3s', 'left: 15%; width: 12px; height: 12px; animation-duration: 11s; animation-delay: -12s', 'left: 4%; width: 7px; height: 7px; animation-duration: 7s; animation-delay: -6s', 'left: 8%; width: 9px; height: 9px; animation-duration: 14s; animation-delay: -12s', 'left: 52%; width: 17px; height: 17px; animation-duration: 13s; animation-delay: -2s', 'left: 82%; width: 15px; height: 15px; animation-duration: 10s; animation-delay: -8s', 'left: 13%; width: 11px; height: 11px; animation-duration: 11s; animation-delay: -10s'];
+var PXB_SV_STAR = ['left: 1.5%; top: 28.7%; animation-delay: -2.8s', 'left: 13.5%; top: 49.5%; animation-delay: -0.0s', 'left: 46.5%; top: 34.1%; animation-delay: -2.0s', 'left: 18.8%; top: 35.6%; animation-delay: -3.0s', 'left: 77.0%; top: 29.3%; animation-delay: -1.2s', 'left: 39.5%; top: 69.3%; animation-delay: -0.0s', 'left: 86.4%; top: 68.2%; animation-delay: -1.8s', 'left: 99.8%; top: 1.4%; animation-delay: -0.6s', 'left: 99.6%; top: 42.1%; animation-delay: -1.7s', 'left: 4.2%; top: 10.2%; animation-delay: -1.3s', 'left: 1.0%; top: 42.7%; animation-delay: -2.5s', 'left: 38.6%; top: 5.2%; animation-delay: -0.6s', 'left: 63.7%; top: 1.1%; animation-delay: -1.1s', 'left: 62.2%; top: 8.9%; animation-delay: -1.8s', 'left: 83.2%; top: 9.5%; animation-delay: -1.2s', 'left: 62.7%; top: 21.8%; animation-delay: -0.7s', 'left: 61.0%; top: 50.8%; animation-delay: -0.5s', 'left: 62.9%; top: 38.8%; animation-delay: -2.1s', 'left: 38.8%; top: 33.8%; animation-delay: -0.2s', 'left: 4.7%; top: 7.6%; animation-delay: -1.5s', 'left: 25.5%; top: 51.8%; animation-delay: -1.2s', 'left: 42.1%; top: 63.3%; animation-delay: -1.5s', 'left: 52.0%; top: 65.0%; animation-delay: -2.9s', 'left: 12.6%; top: 33.6%; animation-delay: -2.0s', 'left: 61.6%; top: 5.2%; animation-delay: -0.6s', 'left: 91.5%; top: 52.4%; animation-delay: -0.2s', 'left: 41.1%; top: 17.4%; animation-delay: -0.1s', 'left: 28.2%; top: 37.2%; animation-delay: -2.9s', 'left: 9.2%; top: 9.7%; animation-delay: -1.4s', 'left: 33.1%; top: 51.3%; animation-delay: -1.6s', 'left: 94.7%; top: 41.3%; animation-delay: -2.8s', 'left: 47.5%; top: 25.0%; animation-delay: -0.9s', 'left: 3.4%; top: 41.9%; animation-delay: -0.2s', 'left: 6.7%; top: 21.8%; animation-delay: -0.4s', 'left: 7.2%; top: 31.7%; animation-delay: -1.1s', 'left: 4.4%; top: 65.5%; animation-delay: -2.2s', 'left: 13.0%; top: 67.4%; animation-delay: -1.0s', 'left: 8.5%; top: 33.1%; animation-delay: -0.2s', 'left: 85.7%; top: 66.1%; animation-delay: -0.1s', 'left: 50.0%; top: 1.0%; animation-delay: -2.0s', 'left: 37.9%; top: 0.9%; animation-delay: -0.2s', 'left: 9.1%; top: 8.1%; animation-delay: -0.8s', 'left: 41.6%; top: 23.1%; animation-delay: -2.8s', 'left: 69.4%; top: 32.0%; animation-delay: -1.4s', 'left: 54.1%; top: 36.3%; animation-delay: -1.5s', 'left: 31.0%; top: 6.1%; animation-delay: -0.1s', 'left: 95.7%; top: 7.9%; animation-delay: -2.3s', 'left: 66.0%; top: 34.0%; animation-delay: -2.7s', 'left: 36.8%; top: 10.0%; animation-delay: -1.8s', 'left: 51.8%; top: 52.8%; animation-delay: -1.0s', 'left: 93.0%; top: 34.9%; animation-delay: -0.7s', 'left: 40.5%; top: 17.5%; animation-delay: -1.9s', 'left: 80.4%; top: 52.8%; animation-delay: -0.6s', 'left: 21.4%; top: 15.4%; animation-delay: -2.8s', 'left: 21.0%; top: 9.4%; animation-delay: -1.1s', 'left: 89.6%; top: 2.8%; animation-delay: -0.2s', 'left: 98.0%; top: 57.5%; animation-delay: -0.3s', 'left: 47.1%; top: 64.8%; animation-delay: -2.5s', 'left: 38.3%; top: 36.4%; animation-delay: -2.0s', 'left: 71.6%; top: 58.9%; animation-delay: -1.9s'];
 var PXB_WIDGETS = [['cal', 'Calendar'], ['wx', 'Weather'], ['music', 'Music'], ['clock', 'Clock'], ['todo', 'To-do'], ['note', 'Notes']];
 var PXB_SPACES = ['Work', 'Games', 'School'];
 var PXB_THEMES = [
@@ -3146,10 +3404,12 @@ function pxbInitials(n) { var p = (n || '').trim().split(/\s+/).filter(Boolean);
   { id: 'metro', name: 'PxMetronome', c: '#6D4C41', d: 'M9 3h6l3 18H6zM12 16l4-9M8 16h8' },
   { id: 'update', name: 'PxUpdate', c: '#2B6BE6', d: 'M12 3v12M7 10l5 5 5-5M5 21h14' },
   { id: 'clips', name: 'PxClips', c: '#E5543F', d: 'M3 6h13v12H3zM16 10l5-3v10l-5-3' },
+  { id: 'timemachine', name: 'PxTime Machine', c: '#5B6EE1', d: 'M12 3a9 9 0 1 1-8.5 6M3 4v5h5M12 8v4l3 2' },
+  { id: 'virtual', name: 'PxVirtual', c: '#1F8F7A', d: 'M3 5h18v12H3zM8 21h8M12 17v4M7 9l3 2-3 2M12 13h4' },
   { id: 'intel', name: 'PxIntelligence', c: '#8E5CF5', d: 'M12 3l1.8 4.6 4.7 1.9-4.7 1.9L12 16l-1.8-4.6-4.7-1.9 4.7-1.9zM19 14l.9 2.1 2.1.9-2.1.9L19 20l-.9-2.1L16 17l2.1-.9z' }
 ].forEach(function (a) { PXB_APPS.push(a); PXB_APP[a.id] = a; });
 Object.assign(PXB_SIZE, { keys: [720, 580], camera: [560, 520], journal: [700, 480], timer: [400, 600], quiz: [520, 540], zen: [440, 500], snake: [380, 560], dice: [440, 420], stocks: [700, 420], dict: [640, 440], podcasts: [560, 540], books: [620, 560], cook: [660, 560], budget: [580, 520], habits: [620, 420], cards: [540, 460], type: [620, 440], color: [480, 580], password: [480, 420], radio: [480, 460], g2048: [400, 560], mines: [420, 520], slide: [380, 480], stickies: [640, 480], writer: [700, 540], storage: [540, 560], moon: [440, 560], countdown: [540, 460], pet: [420, 620], metro: [440, 460] });
-PXB_KEEP.push('aiMsgs', 'setSec', 'btConn', 'notifSound', 'batPct', 'showSpaces', 'sbBt', 'sbSnd', 'lowPower', 'batPlug', 'batSim', 'deskPos', 'lpOrder', 'termHist', 'termCwd', 'termEnv', 'termAlias', 'termColor', 'recent', 'hideWidgets', 'hideIcons', 'clockSec', 'nightShift', 'alarmSnd', 'alarmLoop', 'uiLang', 'theme', 'space', 'widgets', 'nHist', 'clips', 'chime', 'res', 'region', 'clock24', 'tempF', 'wifiNet', 'reduceMotion', 'bigCursor', 'analytics', 'dockApps', 'shots', 'jEntries', 'jSel', 'tmTotal', 'qBest', 'zenTotal', 'snBest', 'dcCount', 'dcHist', 'stSel', 'dicSel', 'podSel', 'podPos', 'podRate', 'rdCh', 'rdFont', 'rdTheme', 'ckSel', 'ckServ', 'budget', 'budCur', 'habits', 'fcDeck', 'fcI', 'tpBest', 'clH', 'clS', 'clL', 'clPal', 'gpLen', 'gpOpt', 'raSel', 't48', 't48Score', 't48Best', 't48Over', 'mnCells', 'mnOver', 'mnStarted', 'slTiles', 'slMoves', 'slShuffled', 'stickies', 'wrTitle', 'wrBody', 'wrFont', 'wrSize', 'wrAlign', 'countdowns', 'pet', 'mtBpm', 'mtBeats', 'kbCat');
+PXB_KEEP.push('fchat', 'chatTo', 'hotCorners', 'saverStyle', 'saverMin', 'lockStyle', 'lockWidgets', 'osLook', 'vmNote', 'autoDark', 'autoNight', 'aiMsgs', 'setSec', 'btConn', 'notifSound', 'batPct', 'showSpaces', 'sbBt', 'sbSnd', 'lowPower', 'batPlug', 'batSim', 'deskPos', 'lpOrder', 'termHist', 'termCwd', 'termEnv', 'termAlias', 'termColor', 'recent', 'hideWidgets', 'hideIcons', 'clockSec', 'nightShift', 'alarmSnd', 'alarmLoop', 'uiLang', 'theme', 'space', 'widgets', 'nHist', 'clips', 'chime', 'res', 'region', 'clock24', 'tempF', 'wifiNet', 'reduceMotion', 'bigCursor', 'analytics', 'dockApps', 'shots', 'jEntries', 'jSel', 'tmTotal', 'qBest', 'zenTotal', 'snBest', 'dcCount', 'dcHist', 'stSel', 'dicSel', 'podSel', 'podPos', 'podRate', 'rdCh', 'rdFont', 'rdTheme', 'ckSel', 'ckServ', 'budget', 'budCur', 'habits', 'fcDeck', 'fcI', 'tpBest', 'clH', 'clS', 'clL', 'clPal', 'gpLen', 'gpOpt', 'raSel', 't48', 't48Score', 't48Best', 't48Over', 'mnCells', 'mnOver', 'mnStarted', 'slTiles', 'slMoves', 'slShuffled', 'stickies', 'wrTitle', 'wrBody', 'wrFont', 'wrSize', 'wrAlign', 'countdowns', 'pet', 'mtBpm', 'mtBeats', 'kbCat');
 
 var PXB_FIT = { snake: [360, 530], g2048: [350, 520], mines: [390, 480], slide: [330, 440], games: [380, 500], memory: [400, 510], timer: [320, 540], pet: [390, 590], moon: [420, 540], fit: [420, 460], metro: [420, 420], dice: [440, 390], calc: [300, 432], zen: [400, 460] };
 var PXB_CAM_G = 'linear-gradient(180deg,#7FC8F2,#CFEFFF 62%,#E8F4FA)';
@@ -3330,6 +3590,7 @@ class Component extends DCLogic {
       acName: '', acPw: '', acNew: '', acNew2: '', acMsg: '', acOk: false, eraseArm: false,
       savedAt: 0, bkOpen: false, bkText: '', bkMsg: '', bkOk: false, fsHelp: false, isFs: false, gq: '', res: 'auto',
       panic: null, srch: null, wiki: null,
+      friends: [], roomOn: false, myPeer: '', fchat: [], chatTo: 'bot', fdraft: '', dropSheet: null, dropIn: null, dropOut: null, mc: false, sw: null, deskShow: false, hotCorners: { tl: 'none', tr: 'none', bl: 'mission', br: 'desktop' }, saver: false, saverStyle: 'penguins', saverMin: 5, lockStyle: 'classic', lockWidgets: true, osLook: 'current', tmWarp: false, vm: null, vmGame: null, vmNote: {}, autoDark: false, autoNight: false, ql: null,
       aiMsgs: [], aiIn: '', aiBusy: false, aiMode: 'checking', aiWT: null, aiUndo: null,
       setSec: 'general', setQ: '', sb: null, sbX: 0, sbPick: '', sbPass: '', sbErr: '', btConn: {}, notifSound: false, batPct: false, showSpaces: true, sbBt: true, sbSnd: true, lowPower: false, batPlug: false, batSim: 0.82, batReal: null, deskPos: {}, lpOrder: [], lpEdit: false, ghost: null, fDrop: null,
       shotImg: {}, termCwd: '', termHist: [], termHi: -1, termEnv: {}, termAlias: {}, termColor: '',
@@ -3348,7 +3609,7 @@ class Component extends DCLogic {
       folder: 'Documents', fileSel: null,
       fs: {
         Documents: [
-          { name: 'Welcome.txt', ext: 'TXT', size: '1 KB', color: '#E9A93A', preview: 'Welcome to your PxBook!\nOpen Px Apps to see all 63 apps.', app: 'notes' },
+          { name: 'Welcome.txt', ext: 'TXT', size: '1 KB', color: '#E9A93A', preview: 'Welcome to your PxBook!\nOpen Px Apps to see all 65 apps.', app: 'notes' },
           { name: 'PenguixOS lore.pdf', ext: 'PDF', size: '1.2 MB', color: '#E5543F', preview: 'Versions: Ankylosaurus, Velociraptor, Juneau, Quetzalcoatlus.\nHardware: PxPC, PxPhone, PxPhone Fold Quad, PxBook.', app: 'browser' },
           { name: 'Languages.txt', ext: 'TXT', size: '1 KB', color: '#14A3A0', preview: 'English, Tibetan, Uyghur, Mongolian', app: 'translate' }
         ],
@@ -3359,12 +3620,12 @@ class Component extends DCLogic {
         Projects: [
           { name: 'PenguixOS Tibet.pxproj', ext: 'PROJ', size: '320 KB', color: '#D9487F', preview: 'The PenguixOS Tibet project.', app: 'browser' },
           { name: 'PxPhone Fold Quad.pxproj', ext: 'PROJ', size: '512 KB', color: '#3FAE5C', preview: 'Folded, unfolded (16:9) and computer modes.', app: 'notes' },
-          { name: 'PxBook.pxproj', ext: 'PROJ', size: '640 KB', color: '#2F8FD8', preview: 'The PxBook laptop UI with 63 apps.', app: 'official' }
+          { name: 'PxBook.pxproj', ext: 'PROJ', size: '640 KB', color: '#2F8FD8', preview: 'The PxBook laptop UI with 65 apps.', app: 'official' }
         ]
       },
       trashList: [],
       notes: [
-        { id: 1, title: 'Welcome to PxBook', body: 'Drag windows by their title bar.\nResize from the bottom-right corner.\nRight-click the desktop for quick actions.\nOpen Px Apps to see all 63 apps.' },
+        { id: 1, title: 'Welcome to PxBook', body: 'Drag windows by their title bar.\nResize from the bottom-right corner.\nRight-click the desktop for quick actions.\nOpen Px Apps to see all 65 apps.' },
         { id: 2, title: 'PenguixOS ideas', body: 'PxPhone Fold Quad computer mode\nPenguixOS Tibet keyboard\nNew PX Glass wallpapers' }
       ], noteSel: 1,
       phTab: 'all', phView: -1, favs: {},
@@ -3414,7 +3675,11 @@ class Component extends DCLogic {
     this.onHide = () => this.persist();
     try { window.addEventListener('pagehide', this.onHide); document.addEventListener('visibilitychange', this.onHide); } catch (e) { /* ignore */ }
     this.bootAt = Date.now();
+    this.lastInput = Date.now();
     this.aiInit();
+    this.roomInit();
+    this.onKeyUpDoc = (e) => { if ((e.key === 'Alt' || e.key === 'Meta' || e.key === 'Control') && this.state.sw) this.swCommit(); };
+    document.addEventListener('keyup', this.onKeyUpDoc);
     this.bootT = setTimeout(() => this.bootDone(), 1900);
     this.tick = setInterval(() => this.onTick(), 1000);
   }
@@ -3457,6 +3722,10 @@ class Component extends DCLogic {
     if (!d || typeof d !== 'object') return p;
     PXB_KEEP.forEach((k) => { if (d[k] !== undefined && d[k] !== null) p[k] = d[k]; });
     if (p.instState === 'run') p.instState = 'idle';
+    if (p.fchat !== undefined) { if (Array.isArray(p.fchat)) p.fchat = p.fchat.filter((m) => m && typeof m.text === 'string' && typeof m.with === 'string').map((m) => ({ id: String(m.id || ''), with: m.with.slice(0, 24), from: String(m.from || '').slice(0, 24), text: m.text.slice(0, 400), t: +m.t || 0, mine: !!m.mine })).slice(-150); else delete p.fchat; }
+    ['hotCorners', 'vmNote'].forEach((k) => { if (p[k] !== undefined && (typeof p[k] !== 'object' || Array.isArray(p[k]) || !p[k])) delete p[k]; });
+    if (p.osLook !== undefined && ['current', 'anky', 'raptor', 'juneau'].indexOf(p.osLook) < 0) delete p.osLook;
+    if (p.chatTo !== undefined && typeof p.chatTo !== 'string') delete p.chatTo;
     if (p.aiMsgs !== undefined) { if (Array.isArray(p.aiMsgs)) p.aiMsgs = p.aiMsgs.filter((m) => m && (m.role === 'user' || m.role === 'assistant') && typeof m.text === 'string' && m.text).map((m) => ({ role: m.role, text: m.text, acts: Array.isArray(m.acts) ? m.acts.filter((a) => typeof a === 'string') : [] })).slice(-40); else delete p.aiMsgs; }
     ['deskPos', 'btConn'].forEach((k) => { if (p[k] !== undefined && (typeof p[k] !== 'object' || Array.isArray(p[k]) || !p[k])) delete p[k]; });
     if (p.deskPos) { const dp = {}; Object.keys(p.deskPos).forEach((k) => { const v = p.deskPos[k]; if (v && isFinite(v.x) && isFinite(v.y)) dp[k] = { x: +v.x, y: +v.y }; }); p.deskPos = dp; }
@@ -3516,7 +3785,7 @@ class Component extends DCLogic {
     try { window.removeEventListener('pagehide', this.onHide); document.removeEventListener('visibilitychange', this.onHide); document.removeEventListener('fullscreenchange', this.onFs); document.removeEventListener('webkitfullscreenchange', this.onFs); } catch (e) { /* ignore */ }
     clearInterval(this.snT); clearInterval(this.mtT); clearTimeout(this.hudT);
     clearTimeout(this.bootT); clearInterval(this.tick); clearInterval(this.swT); clearInterval(this.instT);
-    clearTimeout(this.notifT); clearTimeout(this.keyT); clearTimeout(this.memT); clearInterval(this.recT); clearInterval(this.repT); clearInterval(this.alT); this.hushAlarm(); if (this.aiCtl) this.aiCtl.abort(); clearInterval(this.panicT); clearTimeout(this.panicT);
+    clearTimeout(this.notifT); clearTimeout(this.keyT); clearTimeout(this.memT); clearInterval(this.recT); clearInterval(this.repT); clearInterval(this.alT); this.hushAlarm(); if (this.aiCtl) this.aiCtl.abort(); clearInterval(this.panicT); clearTimeout(this.panicT); clearInterval(this.vmG); clearTimeout(this.vmT); clearTimeout(this.hcT); clearTimeout(this.dropT); if (this.onKeyUpDoc) document.removeEventListener('keyup', this.onKeyUpDoc);
   }
   onTick() {
     this.tickN = (this.tickN || 0) + 1;
@@ -3528,6 +3797,11 @@ class Component extends DCLogic {
       this.notify("Time's up! Your timer finished.", 'PxTimer', 'timer');
       this.ringAlarm();
     }
+    if (s.setupDone && !s.locked && !s.booting && !s.saver && (s.saverMin || 0) > 0 && !s.rec && !s.replay && !s.panic && !s.mc && Date.now() - (this.lastInput || Date.now()) > s.saverMin * 60000) up.saver = true;
+    if (s.autoDark || s.autoNight) {
+      const hr = new Date().getHours(), night = hr >= 19 || hr < 7;
+      if (this.lastNightWant !== night) { this.lastNightWant = night; if (s.autoDark && s.dark !== night) up.dark = night; if (s.autoNight && s.nightShift !== night) up.nightShift = night; }
+    } else this.lastNightWant = undefined;
     if (!s.batReal && s.setupDone && this.tickN % 20 === 0) {
       const b = Math.max(0.01, Math.min(1, (s.batSim || 0.82) + (s.batPlug ? 0.01 : -(s.lowPower ? 0.0025 : 0.005))));
       up.batSim = Math.round(b * 1000) / 1000;
@@ -3571,6 +3845,7 @@ class Component extends DCLogic {
     if (s.spot || s.launch) this.focusRoot();
     if (id === 'apps') { this.setState({ launch: true, spot: false, menu: null, ctx: null, cc: false }); return; }
     if (PXB_APP[id]) close.recent = [id].concat((s.recent || []).filter((x) => x !== id)).slice(0, 6);
+    close.mc = false; close.deskShow = false;
     this.z += 1;
     const ex = s.wins.find((w) => w.id === id);
     if (ex) {
@@ -3623,7 +3898,16 @@ class Component extends DCLogic {
     this.focusWin(id);
   }
   onMove(e) {
+    this.lastInput = Date.now();
+    if (this.state.saver) { if (this.saverPt) { if (Math.abs(e.clientX - this.saverPt[0]) + Math.abs(e.clientY - this.saverPt[1]) > 14) { this.saverPt = null; this.setState({ saver: false }); } } else this.saverPt = [e.clientX, e.clientY]; return; }
     if (this.pd) { this.pdMove(e); return; }
+    if (!this.drag && this.rootEl) {
+      try {
+        const rr = this.rootPt(e, this.rootEl), VW = this.W(), VH = this.H();
+        const c = rr.x <= 3 ? (rr.y <= 3 ? 'tl' : rr.y >= VH - 3 ? 'bl' : '') : rr.x >= VW - 3 ? (rr.y <= 3 ? 'tr' : rr.y >= VH - 3 ? 'br' : '') : '';
+        if (c !== this.hcCur) { this.hcCur = c; clearTimeout(this.hcT); if (c && !this.state.locked && this.state.setupDone && !this.state.booting) this.hcT = setTimeout(() => { if (this.hcCur === c) this.hotCorner(c); }, 280); }
+      } catch (er) { /* ignore */ }
+    }
     const root = e.currentTarget;
     const d = this.drag;
     if (!d && !this.state.cursor) return;
@@ -3875,6 +4159,174 @@ class Component extends DCLogic {
     if (net[2] && (pass || '').length < 8) { this.setState({ sbPick: name, sbErr: (pass || '').length ? 'Wrong password. It needs 8 or more characters.' : '' }); return; }
     this.setState({ wifiNet: name, wifi: true, sbPick: '', sbPass: '', sbErr: '' });
     this.notify('Connected to ' + name, 'Wi-Fi', 'settings');
+  }
+  /* ===== FRIENDS: live PxChat + PxDrop (room presence) ===== */
+  roomInit() {
+    try {
+      if (!(window.claude && typeof window.claude.use === 'function')) return;
+      window.claude.use('room').then((room) => {
+        if (!room) return;
+        this.room = room;
+        this.myMsgs = []; this.seenMsg = new Set(); this.seenDrop = new Set(); this.myDrop = null; this.myAck = null;
+        this.roomPresence();
+        room.onPeers((ch) => this.onRoomPeers(ch.peers), () => this.setState({ roomOn: false, friends: [] }));
+        room.onConnection((c) => this.setState({ roomOn: !!c }), () => {});
+      }).catch(() => {});
+    } catch (e) { /* no live room here */ }
+  }
+  roomPresence() {
+    if (!this.room) return;
+    const s = this.state;
+    const bytes = (o) => { try { return new TextEncoder().encode(JSON.stringify(o)).length; } catch (e) { return JSON.stringify(o).length * 3; } };
+    const p = { app: 'pxbook', name: String(s.userName || 'PxBook User').slice(0, 24), accent: /^#[0-9a-f]{6}$/i.test(s.accent || '') ? s.accent : '#7FD3F7', msgs: (this.myMsgs || []).slice(-5), drop: this.myDrop || null, ack: this.myAck || null };
+    while (bytes(p) > 3800 && p.msgs.length) p.msgs = p.msgs.slice(1);
+    while (bytes(p) > 3800 && p.drop && p.drop.body) p.drop = Object.assign({}, p.drop, { body: p.drop.body.slice(0, Math.floor(p.drop.body.length * 0.75)) });
+    this.room.presence(p).catch(() => {});
+  }
+  onRoomPeers(peers) {
+    const me = peers.find((p) => p.isMe && p.sameTab);
+    const myPeer = me ? me.peer : '';
+    const friends = [], incoming = [];
+    let dropIn = null, outStatus = null;
+    const GRAD = /^linear-gradient\(\d{1,3}deg(,\s*#[0-9a-f]{3,8}(\s+\d{1,3}%)?){2,5}\)$/i;
+    peers.forEach((p) => {
+      if (p.isMe && p.sameTab) return;
+      const pr = p.presence || {};
+      if (pr.app !== 'pxbook') return;
+      const name = String(pr.name || 'Friend').replace(/[\u0000-\u001f\u007f]/g, '').slice(0, 24) || 'Friend';
+      friends.push({ peer: p.peer, name, accent: /^#[0-9a-f]{6}$/i.test(pr.accent || '') ? pr.accent : '#9CC8EE', guest: !!p.guest, mine: !!p.isMe });
+      (Array.isArray(pr.msgs) ? pr.msgs : []).forEach((m) => {
+        if (!m || typeof m.id !== 'string' || typeof m.text !== 'string' || this.seenMsg.has(m.id)) return;
+        this.seenMsg.add(m.id);
+        if (m.to !== 'all' && m.to !== myPeer) return;
+        if (typeof m.t === 'number' && Math.abs(Date.now() - m.t) > 15 * 60 * 1000) return;
+        incoming.push({ id: m.id, with: m.to === 'all' ? 'all' : name, from: name, text: m.text.slice(0, 400), t: Date.now(), mine: false });
+      });
+      const d = pr.drop;
+      if (d && typeof d.id === 'string' && d.to === myPeer && !this.seenDrop.has(d.id)) {
+        this.seenDrop.add(d.id);
+        const kind = ['note', 'todo', 'link', 'photo', 'file'].indexOf(d.kind) >= 0 ? d.kind : 'note';
+        dropIn = { id: d.id, from: name, peer: p.peer, kind, title: String(d.title || 'Untitled').slice(0, 80), body: String(d.body || '').slice(0, 3000), g: GRAD.test(d.g || '') ? d.g : '', url: /^https?:\/\/\S+$/i.test(d.url || '') ? d.url : '' };
+      }
+      const a = pr.ack;
+      if (a && this.myDrop && a.id === this.myDrop.id && this.myDrop.to === p.peer) outStatus = a.ok ? 'accepted' : 'declined';
+    });
+    const up = { friends, myPeer, roomOn: true };
+    if (incoming.length) {
+      up.fchat = this.state.fchat.concat(incoming).slice(-150);
+      const s = this.state, chatTop = s.wins.length && s.wins.some((w) => w.id === 'chat');
+      incoming.forEach((m) => { if (!chatTop || s.chatTo !== m.with) this.notify(m.from + (m.with === 'all' ? ' (everyone)' : '') + ': ' + m.text, 'PxChat', 'chat'); });
+    }
+    if (dropIn && !this.state.dropIn) { up.dropIn = dropIn; this.tone(880, 0.12, 'sine', 0.3); setTimeout(() => this.tone(1320, 0.16, 'sine', 0.3), 130); }
+    if (outStatus && this.state.dropOut && this.state.dropOut.status === 'waiting') {
+      up.dropOut = Object.assign({}, this.state.dropOut, { status: outStatus });
+      this.notify(this.state.dropOut.to + (outStatus === 'accepted' ? ' accepted ' : ' declined ') + '"' + this.state.dropOut.title + '"', 'PxDrop', 'files');
+      this.myDrop = null; setTimeout(() => this.roomPresence(), 0);
+    }
+    this.setState(up);
+  }
+  sendFriend() {
+    const s = this.state;
+    const text = String(s.fdraft || '').trim().slice(0, 400);
+    if (!text) return;
+    if (!this.room) { this.notify('Live chat works when PxBook is opened from the shared page in the Claude app.', 'PxChat', 'chat'); return; }
+    let to = 'all';
+    if (s.chatTo !== 'all') { const f = s.friends.find((x) => x.name === s.chatTo); if (!f) { this.notify(s.chatTo + ' is not online right now.', 'PxChat', 'chat'); return; } to = f.peer; }
+    const id = Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+    this.myMsgs = (this.myMsgs || []).concat([{ id, t: Date.now(), to, text }]).slice(-5);
+    this.roomPresence();
+    this.setState({ fdraft: '', fchat: s.fchat.concat([{ id, with: s.chatTo, from: s.userName || 'Me', text, t: Date.now(), mine: true }]).slice(-150) });
+  }
+  openDrop(item) { this.setState({ dropSheet: item, menu: null }); }
+  sendDrop(f) {
+    const s = this.state, it = s.dropSheet;
+    if (!it || !this.room) return;
+    const id = 'd' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+    this.myDrop = { id, to: f.peer, kind: it.kind, title: String(it.title || '').slice(0, 80), body: String(it.body || '').slice(0, 1500), g: it.g || '', url: it.url || '' };
+    this.roomPresence();
+    this.setState({ dropSheet: null, dropOut: { to: f.name, title: it.title, status: 'waiting' } });
+    clearTimeout(this.dropT);
+    this.dropT = setTimeout(() => { if (this.state.dropOut && this.state.dropOut.status === 'waiting') { this.myDrop = null; this.roomPresence(); this.setState({ dropOut: Object.assign({}, this.state.dropOut, { status: 'no answer' }) }); } }, 90000);
+  }
+  answerDrop(ok) {
+    const s = this.state, d = s.dropIn;
+    if (!d) return;
+    this.myAck = { id: d.id, ok: !!ok };
+    this.roomPresence();
+    const up = { dropIn: null };
+    if (ok) {
+      if (d.kind === 'note') { const n = { id: Date.now(), title: d.title, body: d.body }; up.notes = [n].concat(s.notes); up.noteSel = n.id; setTimeout(() => this.openApp('notes'), 50); }
+      if (d.kind === 'todo') { up.todos = s.todos.concat(d.body.split('\n').map((x) => x.replace(/^[-•*]\s*/, '').trim()).filter(Boolean).slice(0, 30).map((x, i) => ({ id: Date.now() + i, text: x, done: false }))); setTimeout(() => this.openApp('todo'), 50); }
+      if (d.kind === 'link' && d.url) { setTimeout(() => { this.openApp('browser'); this.goUrl(d.url); }, 50); }
+      if (d.kind === 'photo') { up.shots = s.shots.concat([{ name: d.title, g: d.g || 'linear-gradient(135deg,#2F8FD8,#7B4DE0)', f: 'none' }]); setTimeout(() => this.openApp('photos'), 50); }
+      if (d.kind === 'file') { const fs = Object.assign({}, s.fs); const k = fs.Downloads ? 'Downloads' : Object.keys(fs)[0] || 'Downloads'; fs[k] = (fs[k] || []).concat([pxbMkFile(d.title, d.body, null)]); up.fs = fs; up.folder = k; setTimeout(() => this.openApp('files'), 50); }
+      this.notify('Got "' + d.title + '" from ' + d.from, 'PxDrop', 'files');
+    }
+    this.setState(up);
+  }
+  /* ===== MISSION CONTROL, SWITCHER, HOT CORNERS, DESKTOP ===== */
+  toggleMC(on) { const v = on === undefined ? !this.state.mc : !!on; this.setState({ mc: v, menu: null, cc: false, nc: false, sb: null, launch: false, spot: false, deskShow: false }); }
+  swOrder() { return this.state.wins.slice().sort((a, b) => b.z - a.z).map((w) => w.id); }
+  swCommit() {
+    const sw = this.state.sw;
+    if (!sw) return;
+    const id = sw.ids[sw.i];
+    this.setState({ sw: null });
+    if (id) { const w = this.state.wins.find((x) => x.id === id); if (w && w.min) this.patchWin(id, { min: false }); this.openApp(id); }
+  }
+  hotCorner(c) {
+    const a = (this.state.hotCorners || {})[c] || 'none';
+    if (a === 'none') return;
+    if (a === 'mission') this.toggleMC();
+    else if (a === 'desktop') this.setState({ deskShow: !this.state.deskShow });
+    else if (a === 'lock') this.lockNow();
+    else if (a === 'saver') this.setState({ saver: true });
+    else if (a === 'intel') this.openApp('intel');
+    else if (a === 'nc') this.setState({ nc: !this.state.nc, cc: false });
+    else if (a === 'apps') this.openApp('apps');
+  }
+  /* ===== TIME MACHINE ===== */
+  travelTo(look) {
+    if (this.state.tmWarp) return;
+    this.setState({ tmWarp: look });
+    this.tone(330, 0.5, 'sine', 0.2); setTimeout(() => this.tone(660, 0.5, 'sine', 0.2), 300); setTimeout(() => this.tone(990, 0.6, 'sine', 0.2), 650);
+    setTimeout(() => this.setState({ osLook: look }), 800);
+    setTimeout(() => this.setState({ tmWarp: false }), 1700);
+  }
+  /* ===== PXVIRTUAL ===== */
+  vmStart(os) {
+    clearTimeout(this.vmT); clearInterval(this.vmG);
+    this.setState({ vm: { os, stage: 'boot', app: null }, vmGame: null });
+    this.vmT = setTimeout(() => { if (this.state.vm && this.state.vm.os === os) this.setState({ vm: { os, stage: 'desk', app: null } }); }, 2200);
+  }
+  vmStop() { clearTimeout(this.vmT); clearInterval(this.vmG); this.setState({ vm: null, vmGame: null }); }
+  vmGameStart() {
+    clearInterval(this.vmG);
+    const end = Date.now() + 20000;
+    this.setState({ vmGame: { score: 0, items: [], end, over: false } });
+    this.vmG = setInterval(() => {
+      const g = this.state.vmGame;
+      if (!g) { clearInterval(this.vmG); return; }
+      if (Date.now() >= g.end) { clearInterval(this.vmG); this.setState({ vmGame: Object.assign({}, g, { items: [], over: true }) }); return; }
+      const now = Date.now();
+      const items = g.items.filter((x) => now - x.t < 2800).concat([{ id: now + Math.random(), x: 6 + Math.random() * 84, t: now }]);
+      this.setState({ vmGame: Object.assign({}, g, { items }) });
+    }, 650);
+  }
+  vmHit(id) {
+    const g = this.state.vmGame;
+    if (!g || g.over) return;
+    this.tone(1100 + Math.random() * 400, 0.06, 'sine', 0.2);
+    this.setState({ vmGame: Object.assign({}, g, { score: g.score + 1, items: g.items.filter((x) => x.id !== id) }) });
+  }
+  /* ===== QUICK LOOK ===== */
+  quickLook() {
+    const s = this.state;
+    const list = s.fs[s.folder] || [];
+    const f = s.fileSel !== null ? list[s.fileSel] : null;
+    if (!f) return false;
+    this.setState({ ql: { name: f.name, ext: f.ext || 'TXT', size: f.size || '', color: f.color || '#566174', body: f.preview || '(This file is empty)', app: f.app || 'notes', folder: s.folder } });
+    return true;
   }
   /* ===== ERROR SCREEN (⇧⌘E) ===== */
   panicNow() {
@@ -5264,6 +5716,7 @@ class Component extends DCLogic {
         { label: s0.rec ? 'Stop Screen Recording' : 'Start Screen Recording', keys: '⇧⌘V', act: act(() => this.toggleRec()) },
         { label: 'Take Screenshot', keys: '⇧⌘S', act: act(() => this.screenshot()) },
         { sep: true },
+        { label: 'Start Screen Saver', act: act(() => { this.lastInput = Date.now(); this.saverPt = null; this.setState({ saver: true }); }) },
         { label: 'Force Quit All Apps', act: act(() => { const n = s.wins.length; this.setState({ wins: [] }); this.notify(n + ' app' + (n === 1 ? '' : 's') + ' closed', 'PxBook', 'activity'); }) },
         { label: 'Sleep', act: act(() => this.sleepNow()) },
         { label: t('Lock Screen'), keys: '⇧⌘L', act: act(() => this.lockNow()) },
@@ -5325,6 +5778,8 @@ class Component extends DCLogic {
         { label: 'Empty Trash' + (s.trashList.length ? '  (' + s.trashList.length + ')' : ''), dis: !s.trashList.length, act: act(() => { this.setState({ trashList: [] }); this.notify('Trash emptied', 'PxTrash', 'trash'); }) },
         { sep: true },
         { label: 'Take Screenshot', keys: '⇧⌘S', act: act(() => this.screenshot()) },
+        { label: 'PxDrop Current Note…', act: act(() => { const n = s.notes.find((x) => x.id === s.noteSel) || s.notes[0]; if (n) this.openDrop({ kind: 'note', title: n.title || 'Note', body: n.body || '' }); }) },
+        { label: 'Quick Look', keys: 'Space', dis: s.fileSel === null, act: act(() => this.quickLook()) },
         { label: 'Print…', act: act(() => { try { window.print(); } catch (e) { /* ignore */ } }) },
         { sep: true },
         { label: t('Close Window'), keys: '⌘W', dis: tdis, act: act(() => { if (top) this.closeApp(top); }) },
@@ -5361,6 +5816,10 @@ class Component extends DCLogic {
         { head: t('Language') }
       ]).concat(PXB_LANGS.map((k) => ({ label: PXB_GREET[k].label, chk: s.uiLang === k, act: act(() => { this.setState({ uiLang: k, sLang: k }); this.saveAcct({ lang: k }); }) }))) },
       { key: 'window', label: t('Window'), aria: 'Window menu', items: [
+        { label: 'Mission Control', keys: '⌃↑', act: act(() => this.toggleMC(true)) },
+        { label: 'Switch Apps', keys: '⌥Tab', dis: !s.wins.length, act: act(() => { const ids = this.swOrder(); if (ids.length) this.setState({ sw: { ids, i: ids.length > 1 ? 1 : 0 } }); }) },
+        { label: s.deskShow ? 'Show Windows' : 'Show Desktop', act: act(() => this.setState({ deskShow: !s.deskShow })) },
+        { sep: true },
         { label: t('Minimize'), keys: '⌘M', dis: tdis, act: act(() => { if (top) this.patchWin(top, { min: true }); }) },
         { label: 'Minimize All', keys: '⇧⌘H', act: act(() => this.setState({ wins: s.wins.map((w) => Object.assign({}, w, { min: true })) })) },
         { label: t('Zoom'), keys: '⌘↩', dis: tdis, act: act(() => { if (top) this.toggleMax(top); }) },
@@ -5480,6 +5939,7 @@ class Component extends DCLogic {
         ['Password', () => this.openApp('settings')], ['Language', () => this.openApp('settings')], ['Users and Guest', () => this.openApp('settings')], ['Themes', () => this.openApp('store')],
         ['Notification Center', () => this.setState({ nc: true, spot: false })], ['Screen recording', () => this.toggleRec()], ['Spaces', () => this.goSpace((s.space || 0) + 1)],
         ['Software update', () => this.openApp('update')], ['Focus', () => this.setState({ focus: !s.focus })], ['Reduce motion', () => this.setState({ reduceMotion: !s.reduceMotion })],
+        ['Mission Control', () => this.toggleMC(true)], ['Screen saver', () => this.setState({ saver: true })], ['Hot corners', () => { this.setState({ setSec: 'desk' }); this.openApp('settings'); }], ['Auto dark mode', () => { this.setState({ setSec: 'appearance' }); this.openApp('settings'); }], ['Lock screen style', () => { this.setState({ setSec: 'lock' }); this.openApp('settings'); }],
         ['Keyboard shortcuts', () => this.openApp('keys')], ['Alarm sound', () => { this.setState({ tmPick: true }); this.openApp('timer'); }], ['24-hour clock', () => this.setState({ clock24: !s.clock24 })], ['Startup sound', () => this.setState({ chime: !s.chime })]
       ].filter((x) => hit(x[0])).slice(0, 3).forEach((x) => sres.push({ name: x[0], c: setG.c, d: setG.d, kind: t('Settings'), open: () => { this.setState({ spot: false, spotQ: '' }); x[1](); } }));
       Object.keys(s.fs).forEach((fo) => s.fs[fo].forEach((f, i) => { if (hit(f.name)) sres.push({ name: f.name, c: PXB_APP.files.c, d: PXB_APP.files.d, kind: t('File') + ' · ' + fo, open: () => { this.setState({ folder: fo, fileSel: i }); this.openApp('files'); } }); }));
@@ -5588,6 +6048,7 @@ class Component extends DCLogic {
       list: fsList.map((f, i) => ({ name: f.name, ext: f.ext, size: f.size, color: f.color, cls: cls(i === s.fileSel), down: (e) => this.pdDown(e, 'file', i), pick: () => { if (this.noClick) return; this.setState({ fileSel: i }); }, open: () => this.openApp(f.app) })),
       empty: fsList.length === 0, hasSel: !!selF, sel: selF || { name: '', preview: '' },
       openSel: () => { if (selF) this.openApp(selF.app); },
+      ql: () => this.quickLook(), drop: () => { if (selF) this.openDrop({ kind: 'file', title: selF.name, body: selF.preview || '' }); },
       del: () => {
         if (!selF) return;
         const fs = Object.assign({}, s.fs); fs[s.folder] = fsList.filter((_, i) => i !== s.fileSel);
@@ -5609,7 +6070,9 @@ class Component extends DCLogic {
     // NOTES
     const curNote = s.notes.find((n) => n.id === s.noteSel) || s.notes[0] || { id: -1, title: '', body: '' };
     const editNote = (p) => this.setState({ notes: s.notes.map((n) => (n.id === curNote.id ? Object.assign({}, n, p) : n)) });
+    const curNoteD = s.notes.find((n) => n.id === s.noteSel) || s.notes[0] || null;
     const notes = {
+      drop: () => { if (curNoteD) this.openDrop({ kind: 'note', title: curNoteD.title || 'Note', body: curNoteD.body || '' }); },
       list: s.notes.map((n) => ({ title: n.title || 'Untitled', snip: n.body.split('\n')[0], cls: cls(n.id === curNote.id), pick: () => this.setState({ noteSel: n.id }) })),
       cur: curNote, count: curNote.body.length,
       add: () => this.addNote(),
@@ -6386,7 +6849,7 @@ class Component extends DCLogic {
       cities: PXB_WX.map((c, i) => ({ name: c.city, cls: cls(i === s.wxCity), on: i === s.wxCity ? 'true' : 'false', pick: () => this.setState({ wxCity: i }) })),
       privacy: [{ label: 'Share usage info with Penguix', hint: 'Demo setting: PxBook never sends anything anywhere.', cls: cls(s.analytics), aria: s.analytics ? 'true' : 'false', flip: () => this.setState({ analytics: !s.analytics }) }],
       // plan
-      plans: [['Free', 'Free', '$0', 'All 63 apps and saving on this device.'], ['PenguixOS Pro', 'Pro', '$1.99/month', 'PxChat beta and PX Glass wallpapers.'], ['PenguixOS Ultra', 'Ultra', '$3.99/month', 'Everything in Pro, plus early previews.']].map((p) => ({ name: p[1], price: p[2], perk: p[3], cls: cls(s.plan === p[0]), on: s.plan === p[0] ? 'true' : 'false', pick: () => this.setState({ plan: p[0] }) })),
+      plans: [['Free', 'Free', '$0', 'All 65 apps and saving on this device.'], ['PenguixOS Pro', 'Pro', '$1.99/month', 'PxChat beta and PX Glass wallpapers.'], ['PenguixOS Ultra', 'Ultra', '$3.99/month', 'Everything in Pro, plus early previews.']].map((p) => ({ name: p[1], price: p[2], perk: p[3], cls: cls(s.plan === p[0]), on: s.plan === p[0] ? 'true' : 'false', pick: () => this.setState({ plan: p[0] }) })),
       // summary
       sumWall: PXB_WALLS[s.wall].name + ' wallpaper', sumRegion: (PXB_REGIONS.find((r) => r[0] === s.region) || PXB_REGIONS[0])[1] + ' · ' + (s.clock24 ? '24-hour' : '12-hour') + ' · ' + (s.tempF ? '°F' : '°C'),
       sumWifi: s.wifiNet || 'Not connected yet', sumDock: (s.dockApps || PXB_DOCK.filter((x) => x !== 'apps')).length + ' apps', sumPlan: s.plan === 'Free' ? 'Free' : s.plan.replace('PenguixOS ', '')
@@ -6523,16 +6986,23 @@ class Component extends DCLogic {
       { title: 'Sounds', rows: [T_('Startup sound', 'chime', 'Chime when PxBook starts'), T_('Notification sound', 'notifSound'), B_('Alarm sound', 'Choose…', () => { this.setState({ tmPick: true }); this.openApp('timer'); }, '', (PXB_ALARMS[s.alarmSnd] || PXB_ALARMS[0]).name)] }];
     G.focus = [{ rows: [T_('Focus', 'focus', 'Hides notification banners. They still go to Notification Center.'), V_('Turn on quickly', '⇧⌘F', 'Or use Control Center')] }];
     G.general = [{ rows: ['about', 'update', 'storage', 'lang', 'datetime', 'saving', 'keyboard'].map(N_) }, { rows: [B_('Restart PxBook', 'Restart…', () => this.restart()), B_('Shut down PxBook', 'Shut Down…', () => this.shutDown())] }];
-    G.appearance = [{ rows: [C_('Appearance', [chip('Light', !s.dark, () => this.setState({ dark: false })), chip('Dark', !!s.dark, () => this.setState({ dark: true }))]), T_('Night Shift', 'nightShift', 'Warmer colors for the evening')] },
+    G.appearance = [{ rows: [C_('Appearance', [chip('Light', !s.dark && !s.autoDark, () => this.setState({ dark: false, autoDark: false })), chip('Dark', !!s.dark && !s.autoDark, () => this.setState({ dark: true, autoDark: false })), chip('Auto', !!s.autoDark, () => { this.lastNightWant = undefined; this.setState({ autoDark: true }); })], s.autoDark ? 'Auto: dark from 7 PM to 7 AM' : ''), T_('Night Shift at night', 'autoNight', 'Turns on warm colors from 7 PM to 7 AM'), T_('Night Shift', 'nightShift', 'Warmer colors for the evening')] },
       { title: 'Theme', rows: [C_('PxStore theme', PXB_THEMES.map((th) => { const have = s.plan === 'PenguixOS Ultra' ? 2 : s.plan === 'PenguixOS Pro' ? 1 : 0, ok = have >= { Free: 0, Pro: 1, Ultra: 2 }[th.tier]; return chip(th.name + (ok ? '' : ' 🔒'), s.theme === th.id, () => { if (ok) this.setState({ theme: th.id, accent: th.acc }); else this.notify(th.name + ' needs the ' + th.tier + ' plan (PxStore)', 'PxSettings', 'store'); }); }), 'Get more in PxStore')] }];
     G.access = [{ title: 'Vision', rows: [T_('Reduce motion', 'reduceMotion', 'Fewer animations'), T_('Bigger pointer', 'bigCursor'), T_('PX Cursor', 'cursor', 'Penguin-style pointer'), T_('Night Shift', 'nightShift'), C_('Text size', [['larger', 'Larger'], ['default', 'Default'], ['more', 'Smaller']].map((r) => chip(r[1], s.res === r[0], () => this.setRes(r[0]))))] }];
     G.cc = [{ title: 'Menu bar', rows: [T_('Battery percentage', 'batPct', 'Shows 82% next to the battery'), T_('Bluetooth', 'sbBt', 'Show Bluetooth in the menu bar'), T_('Sound', 'sbSnd', 'Show Sound in the menu bar'), T_('Spaces buttons', 'showSpaces', 'The 1 2 3 buttons'), T_('Seconds in the clock', 'clockSec')] }];
     G.desk = [{ title: 'Dock', rows: [T_('Magnification', 'magnify', 'Icons grow when you point at them'), B_('Dock apps', 'Reset Dock', () => this.setState({ dockApps: null }), this.dockList().length + ' apps · drag them in the Dock to move them, or up to remove')].concat(this.dockList().map((id) => Object.assign(B_(PXB_APP[id].name, 'Remove', () => this.setState({ dockApps: this.dockList().filter((x) => x !== id) })), { hasIco: true, c: PXB_APP[id].c, d: PXB_APP[id].d }))) },
       { title: 'Desktop', rows: [T_('Desktop widgets', 'hideWidgets', '', true), T_('Desktop icons and folders', 'hideIcons', 'Drag them anywhere', true), B_('Icon positions', 'Clean Up', () => this.setState({ deskPos: {} })), B_('New folder on the desktop', 'New Folder', () => this.newDeskFolder())] },
-      { title: 'Spaces', rows: [C_('Current space', PXB_SPACES.map((nm, i) => chip(nm, (s.space || 0) === i, () => this.goSpace(i))))] }];
+      { title: 'Spaces', rows: [C_('Current space', PXB_SPACES.map((nm, i) => chip(nm, (s.space || 0) === i, () => this.goSpace(i)))), B_('Mission Control', 'Open', () => this.toggleMC(true), 'See every window at once · ⌃↑ or F3')] }];
+    const hcOpts = [['none', 'None'], ['mission', 'Mission Control'], ['desktop', 'Desktop'], ['lock', 'Lock'], ['saver', 'Screen saver'], ['intel', 'PxIntelligence'], ['nc', 'Notifications'], ['apps', 'Px Apps']];
+    const hcRow = (k, label) => C_(label, hcOpts.map((o) => chip(o[1], ((s.hotCorners || {})[k] || 'none') === o[0], () => this.setState({ hotCorners: Object.assign({}, s.hotCorners, { [k]: o[0] }) }))));
+    G.desk = G.desk.concat([{ title: 'Hot Corners (move the pointer into a corner)', rows: [hcRow('tl', 'Top left'), hcRow('tr', 'Top right'), hcRow('bl', 'Bottom left'), hcRow('br', 'Bottom right')] }]);
     G.displays = [{ rows: [S_('Brightness', 'bright', 30, (e) => this.setState({ bright: Number(e.target.value) })), T_('Night Shift', 'nightShift')] }];
     G.battery = [{ rows: [T_('Low Power Mode', 'lowPower', 'Fewer animations so the battery lasts longer'), T_('Show percentage in menu bar', 'batPct')].concat(s.batReal ? [V_('Battery source', 'This device', 'Real battery level from your device')] : [T_('Charger connected', 'batPlug', 'This browser doesn\'t share the real battery, so PxBook uses its own'), V_('Battery source', 'PxBook battery')]) }];
     G.lock = [{ rows: [B_('Lock now', 'Lock Screen', () => this.lockNow(), '⇧⌘L'), B_('Sleep', 'Sleep', () => this.sleepNow(), 'Black screen until you press a key'), V_('Password', s.pwHash ? 'On' : 'Off', 'Change it in your account'), N_('users')] }];
+    G.lock = G.lock.concat([
+      { title: 'Lock screen look', rows: [C_('Clock style', [['classic', 'Classic'], ['bold', 'Bold'], ['thin', 'Thin'], ['outline', 'Outline'], ['mono', 'Mono']].map((o) => chip(o[1], (s.lockStyle || 'classic') === o[0], () => this.setState({ lockStyle: o[0] })))), T_('Widgets on the lock screen', 'lockWidgets', 'Weather, battery and your next to-do')] },
+      { title: 'Screen saver', rows: [C_('Style', [['penguins', 'Swimming penguins'], ['aurora', 'Aurora'], ['clock', 'Floating clock']].map((o) => chip(o[1], (s.saverStyle || 'penguins') === o[0], () => this.setState({ saverStyle: o[0] })))), C_('Start after', [[0, 'Never'], [1, '1 min'], [2, '2 min'], [5, '5 min'], [10, '10 min'], [20, '20 min']].map((o) => chip(o[1], (s.saverMin === undefined ? 5 : s.saverMin) === o[0], () => this.setState({ saverMin: o[0] })))), B_('Try it now', 'Preview', () => { this.lastInput = Date.now(); this.saverPt = null; this.setState({ saver: true }); }, 'Move the pointer or press a key to stop')] }
+    ]);
     G.privacy = [{ rows: [T_('Share usage info with Penguix', 'analytics', 'Demo switch: PxBook never sends anything anywhere'), V_('Where your stuff is saved', 'This device only'), B_('Recovery', 'Restart to Recovery…', () => this.toRecovery(), 'First Aid, reinstall, reset password')] }];
     G.keyboard = [{ rows: [B_('Keyboard shortcuts', 'Show All', () => this.openApp('keys'), this.shortcuts().length + ' shortcuts for the Magic Keyboard'), B_('Terminal', 'Open PxTerminal', () => this.openApp('terminal'), 'pxsh 2.0 with ' + Object.keys(PXB_SH).length + ' commands')] }];
     G.lang = [{ rows: [C_('Language', PXB_LANGS.map((k) => chip(PXB_GREET[k].label, s.uiLang === k, () => { this.setState({ uiLang: k, sLang: k }); this.saveAcct({ lang: k }); })), 'Menus, Control Center, PxFind and the lock screen'), C_('Region', PXB_REGIONS.map((r) => chip(r[1], s.region === r[0], () => this.setState({ region: r[0] })))), C_('Temperature', [chip('°C', !s.tempF, () => this.setState({ tempF: false })), chip('°F', !!s.tempF, () => this.setState({ tempF: true }))])] }];
@@ -6604,6 +7074,105 @@ class Component extends DCLogic {
       canUndo: !!(s.aiUndo && s.notes.some((n) => n.id === s.aiUndo.id)),
       undo: () => { const u = s.aiUndo; if (!u) return; this.setState({ aiUndo: null, notes: s.notes.map((n) => (n.id === u.id ? Object.assign({}, n, { body: u.body }) : n)) }); }
     };
+    // ===== UPDATE 10 =====
+    const U10 = (() => {
+    const fAv = (c, sz) => 'width: ' + sz + 'px; height: ' + sz + 'px; border-radius: ' + (sz / 2) + 'px; background: ' + c + '; color: #0B1A2E; font-weight: 800; font-size: ' + Math.round(sz * 0.4) + 'px; display: flex; align-items: center; justify-content: center; flex: none';
+    const online = s0.friends || [];
+    const histNames = Array.from(new Set((s0.fchat || []).map((m) => m.with).filter((w) => w && w !== 'all')));
+    const thNames = Array.from(new Set(online.map((f) => f.name).concat(histNames)));
+    const curTh = s0.chatTo || 'bot';
+    const fch = {
+      bot: curTh === 'bot', friend: curTh !== 'bot',
+      threads: [{ id: 'bot', name: 'Penguix Bot', c: '#1F8F55', ini: '🤖', on: false }, { id: 'all', name: 'Everyone online' + (online.length ? ' · ' + online.length : ''), c: '#2B7FE6', ini: '★', on: online.length > 0 }]
+        .concat(thNames.map((n) => { const f = online.find((x) => x.name === n); return { id: n, name: n, c: f ? f.accent : '#9AA4B2', ini: pxbInitials(n), on: !!f }; }))
+        .map((th) => ({ name: th.name, initials: th.ini, online: th.on, av: fAv(th.c, 26), cls: cls(curTh === th.id), pick: () => this.setState({ chatTo: th.id }) })),
+      status: this.room ? (s0.roomOn ? (online.length ? online.length + ' friend' + (online.length === 1 ? '' : 's') + ' online now' : 'Live · nobody else is online yet. Share your PxBook page with friends.') : 'Connecting…') : 'Live chat works when PxBook is opened from the shared page in the Claude app.',
+      title: curTh === 'bot' ? 'Penguix Bot' : curTh === 'all' ? 'Everyone online' : curTh,
+      sub: curTh === 'bot' ? 'Helper bot' : curTh === 'all' ? online.map((f) => f.name).join(', ') || 'No one online' : (online.some((f) => f.name === curTh) ? '● online' : 'offline'),
+      msgs: (s0.fchat || []).filter((m) => m.with === curTh).map((m) => ({ text: m.text, from: m.from, showFrom: !m.mine && curTh === 'all', style: m.mine
+        ? 'align-self: flex-end; max-width: 75%; background: #2B7FE6; color: #ffffff; padding: 9px 13px; border-radius: 16px 16px 4px 16px; font-size: 14px; white-space: pre-wrap; word-break: break-word'
+        : 'align-self: flex-start; max-width: 75%; background: ' + T.card + '; color: ' + T.fg + '; padding: 9px 13px; border-radius: 16px 16px 16px 4px; font-size: 14px; white-space: pre-wrap; word-break: break-word; box-shadow: inset 0 0 0 1px ' + T.line })),
+      empty: !(s0.fchat || []).some((m) => m.with === curTh),
+      draft: s0.fdraft, ph: curTh === 'all' ? 'Message everyone online' : 'Message ' + curTh,
+      onDraft: (e) => this.setState({ fdraft: e.target.value }), onKey: (e) => { if (e.key === 'Enter') this.sendFriend(); }, send: () => this.sendFriend(),
+      drop: () => this.openDrop({ kind: 'note', title: (s.notes[0] || {}).title || 'Note', body: (s.notes[0] || {}).body || '' })
+    };
+    const ds = s0.dropSheet;
+    const dsv = { on: !!ds, title: ds ? ds.title : '', live: !!this.room, off: !this.room, none: !online.length,
+      friends: online.map((f) => ({ name: f.name, initials: pxbInitials(f.name), av: fAv(f.accent, 56), send: () => this.sendDrop(f) })),
+      close: () => this.setState({ dropSheet: null }), bg: (e) => { if (e.target === e.currentTarget) this.setState({ dropSheet: null }); } };
+    const di = s0.dropIn;
+    const dIn = { on: !!di, from: di ? di.from : '', initials: di ? pxbInitials(di.from) : '', av: fAv('#2FB86E', 40), title: di ? di.title : '',
+      what: di ? { note: 'a note', todo: 'a to-do list', link: 'a link', photo: 'a photo', file: 'a file' }[di.kind] : '', preview: di ? (di.kind === 'link' ? di.url : di.body.slice(0, 220)) : '',
+      yes: () => this.answerDrop(true), no: () => this.answerDrop(false) };
+    const dout = s0.dropOut;
+    const dOut = { on: !!dout, text: dout ? (dout.status === 'waiting' ? 'Waiting for ' + dout.to + ' to accept "' + dout.title + '"…' : dout.to + ' ' + (dout.status === 'no answer' ? "didn't answer" : dout.status) + ' "' + dout.title + '"') : '', close: () => { if (dout && dout.status === 'waiting') { this.myDrop = null; this.roomPresence(); } this.setState({ dropOut: null }); } };
+    // mission control
+    const VW = this.W(), VH = this.H();
+    const mcv = { on: !!s0.mc, none: false, bg: (e) => { if (e.target === e.currentTarget) this.toggleMC(false); },
+      spaces: PXB_SPACES.map((nm, i) => ({ name: t(nm), cls: (s.space || 0) === i ? 'on' : '', go: () => { this.goSpace(i); },
+        bg: 'background: linear-gradient(135deg,' + wp.b1 + ',' + wp.b2 + ' 55%,' + wp.b3 + ')',
+        wins: s.wins.filter((w) => (w.sp || 0) === i && !w.min).map((w) => 'position: absolute; left: ' + Math.round(w.x / VW * 150) + 'px; top: ' + Math.round(w.y / VH * 94) + 'px; width: ' + Math.max(6, Math.round(w.w / VW * 150)) + 'px; height: ' + Math.max(5, Math.round(w.h / VH * 94)) + 'px; background: rgba(255,255,255,0.88); border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,.3)') })),
+      wins: s.wins.filter((w) => (w.sp || 0) === (s.space || 0) || w.id === 'intel').map((w) => { const k = Math.min(260 / w.w, 170 / w.h, 0.4); const a = PXB_APP[w.id]; return { name: a.name, tag: w.min ? ' (hidden)' : '', c: a.c, d: a.d,
+        thumb: 'width: ' + Math.round(w.w * k) + 'px; height: ' + Math.round(w.h * k) + 'px; background: ' + T.bg + ';' + (w.min ? ' opacity: .55;' : ''),
+        go: () => { this.setState({ mc: false }); if (w.min) this.patchWin(w.id, { min: false }); this.openApp(w.id); } }; }) };
+    mcv.none = !mcv.wins.length;
+    const swS = s0.sw;
+    const swv = { on: !!swS, items: swS ? swS.ids.map((id, i) => ({ name: PXB_APP[id] ? PXB_APP[id].name : id, c: PXB_APP[id] ? PXB_APP[id].c : '#566174', d: PXB_APP[id] ? PXB_APP[id].d : '', cls: i === swS.i ? 'on' : '', on: i === swS.i ? 'true' : 'false', go: () => { this.setState({ sw: { ids: swS.ids, i } }); setTimeout(() => this.swCommit(), 0); } })) : [] };
+    const svStyle = s.reduceMotion ? 'clock' : (s.saverStyle || 'penguins');
+    const sv2 = { on: !!s0.saver, peng: svStyle === 'penguins', aurora: svStyle === 'aurora', clock: svStyle === 'clock', pengs: PXB_SV_PENG, bubbles: PXB_SV_BUB, stars: PXB_SV_STAR,
+      bg: svStyle === 'penguins' ? 'background: linear-gradient(180deg, #0B4A7A 0%, #062A4D 55%, #031629 100%)' : svStyle === 'aurora' ? 'background: linear-gradient(180deg, #02040C 0%, #08142A 70%, #0E2436 100%)' : 'background: #000000',
+      stop: () => { this.saverPt = null; this.lastInput = Date.now(); this.setState({ saver: false }); } };
+    // time machine
+    const lookNow = s.osLook || 'current';
+    const qzI = s.instState === 'done';
+    const tmVers = [
+      ['anky', 'Ankylosaurus', 'Version 1', '#8A93A3', 'Retro gray windows, square corners and a mono font.', 'background: #008080', 'background: #C3C3C3; border-radius: 0; box-shadow: inset -2px -2px 0 #404040, inset 2px 2px 0 #ffffff', 'background: linear-gradient(90deg,#00307A,#2B6FD0)', 'background: #C3C3C3; border-radius: 0'],
+      ['raptor', 'Velociraptor', 'Version 2', '#2B7FE6', 'Shiny glossy buttons, light title bars and a glass Dock.', 'background: linear-gradient(180deg,#3A6FD8,#9CC3F2)', 'background: #ECEFF3; border-radius: 6px 6px 3px 3px; box-shadow: 0 2px 6px rgba(0,0,0,.4)', 'background: linear-gradient(#F4F7FB,#B7C3D1)', 'background: linear-gradient(rgba(255,255,255,.7),rgba(255,255,255,.25)); border-radius: 3px 3px 0 0'],
+      ['juneau', 'Juneau', 'Version 3', '#2FB86E', 'Flat and simple: solid colors, no blur, thin shadows.', 'background: #2E3A4E', 'background: #ffffff; border-radius: 2px', 'background: #2B7FE6', 'background: rgba(28,32,42,.9); border-radius: 4px'],
+      ['current', 'Quetzalcoatlus', 'Version 4 · today', '#F2C14E', 'PX Glass: blur, glow, rounded everything.', 'background: linear-gradient(135deg,' + wp.b1 + ',' + wp.b3 + ')', 'background: rgba(255,255,255,.92); border-radius: 6px', 'background: rgba(0,0,0,.08)', 'background: rgba(255,255,255,.35); border-radius: 7px']
+    ];
+    const tmv = { warp: !!s0.tmWarp, warpTo: s0.tmWarp ? (tmVers.find((v) => v[0] === s0.tmWarp) || tmVers[3])[1] : '', nowName: qzI ? 'Quetzalcoatlus' : 'today',
+      vers: tmVers.map((v) => { const on = lookNow === v[0]; const needQz = v[0] === 'current' && !qzI; return { name: v[0] === 'current' && !qzI ? 'Today (Juneau)' : v[1], era: v[2], c: v[3], desc: needQz ? 'The look you have now. Install Quetzalcoatlus in PxUpdate to get PX Glass.' : v[4], cls: on ? 'on' : '',
+        prev: 'position: relative; height: 84px; border-radius: 8px; overflow: hidden; ' + v[5], pwin: 'position: absolute; left: 14%; top: 14%; width: 62%; height: 54%; display: block; ' + v[6], pbar: 'display: block; height: 9px; ' + v[7], pdock: 'position: absolute; left: 22%; right: 22%; bottom: 5px; height: 9px; display: block; ' + v[8],
+        btn: on ? '✓ You are here' : 'Travel', btnCls: on ? '' : 'on', go: () => { if (!on) this.travelTo(v[0]); } }; }) };
+    const lookWall = { on: lookNow === 'anky' || lookNow === 'raptor' || lookNow === 'juneau', style: 'position: absolute; inset: 0; ' + (lookNow === 'anky' ? 'background: #008080' : lookNow === 'raptor' ? 'background: radial-gradient(ellipse at 30% 110%, #9CC3F2 0%, transparent 55%), linear-gradient(180deg, #2D5FC8, #6B9BE8)' : 'background: linear-gradient(160deg, #2E3A4E, #1C2433)') };
+    // pxvirtual
+    const VMS = {
+      sigeon: { name: 'SigeonOS', emoji: '🕊️', desc: 'The pigeon-powered OS from the PenguixOS universe. Fast, friendly and always finds its way home.', spec: '2 cores · 512 MB · SigeonOS 3', prev: 'height: 90px; border-radius: 10px; display: flex; align-items: center; justify-content: center; gap: 8px; background: linear-gradient(135deg,#6B7F99,#B9C7D8)', screen: 'background: linear-gradient(180deg,#7E93AE 0%,#C9D6E5 70%,#E8EEF5 100%); color: #1D2735', topbar: 'position: absolute; top: 0; left: 0; right: 0; height: 28px; display: flex; align-items: center; padding: 0 12px; gap: 8px; font-size: 12px; background: rgba(29,39,53,0.85); color: #ffffff', panel: 'background: #F4F7FB; color: #1D2735', head: 'background: #DCE4EE', ic: '#1D2735', item: '🍞',
+        apps: [['notes', '📝', 'CooNotes'], ['game', '🍞', 'Bread Catch'], ['clock', '🕰️', 'Coo Clock'], ['about', 'ℹ️', 'About']],
+        about: ['SigeonOS is a rival operating system in the PenguixOS universe, made for pigeons who love the city.', 'It is running here inside PxVirtual, a pretend virtual machine. Nothing is installed and nothing leaves your PxBook.', 'Try Bread Catch: tap the bread before it disappears!'] },
+      meowl: { name: 'MeowlOS', emoji: '🐱', desc: 'The cat-owl OS from the PenguixOS universe. Cozy, curious and wide awake at night.', spec: '4 cores · 1 GB · MeowlOS Night', prev: 'height: 90px; border-radius: 10px; display: flex; align-items: center; justify-content: center; gap: 8px; background: linear-gradient(135deg,#3B1F6B,#8E5CF5)', screen: 'background: radial-gradient(circle at 80% 18%, #F8F1C8 0, #F8F1C8 26px, transparent 28px), linear-gradient(180deg,#1A0F3A,#3B1F6B 60%,#5B3FA8); color: #F3EDFF', topbar: 'position: absolute; top: 0; left: 0; right: 0; height: 28px; display: flex; align-items: center; padding: 0 12px; gap: 8px; font-size: 12px; background: rgba(20,10,45,0.8); color: #F3EDFF', panel: 'background: #241445; color: #F3EDFF', head: 'background: #34205F', ic: '#F3EDFF', item: '🧶',
+        apps: [['notes', '📓', 'Purr Notes'], ['game', '🧶', 'Yarn Pop'], ['clock', '🦉', 'Hoot Clock'], ['about', 'ℹ️', 'About']],
+        about: ['MeowlOS is a rival operating system in the PenguixOS universe, half cat and half owl: playful by day, sharp-eyed by night.', 'It is running here inside PxVirtual, a pretend virtual machine. Nothing is installed and nothing leaves your PxBook.', 'Try Yarn Pop: tap the yarn balls before they roll away!'] }
+    };
+    const vm = s0.vm, vmd = vm ? VMS[vm.os] : null, g = s0.vmGame;
+    const vmv = { idle: !vm, running: !!vm,
+      list: Object.keys(VMS).map((k) => ({ name: VMS[k].name, emoji: VMS[k].emoji, desc: VMS[k].desc, spec: VMS[k].spec, prev: VMS[k].prev, start: () => this.vmStart(k) })),
+      name: vmd ? vmd.name : '', emoji: vmd ? vmd.emoji : '', screen: vmd ? vmd.screen : '', topbar: vmd ? vmd.topbar : '', icColor: vmd ? vmd.ic : '#ffffff',
+      boot: !!vm && vm.stage === 'boot', desk: !!vm && vm.stage === 'desk', clock: hm(now),
+      restart: () => this.vmStart(vm.os), stop: () => this.vmStop(),
+      apps: vmd ? vmd.apps.map((a) => ({ emoji: a[1], name: a[2], open: () => { if (a[0] !== 'game') clearInterval(this.vmG); this.setState({ vm: Object.assign({}, vm, { app: a[0] }), vmGame: a[0] === 'game' ? null : s0.vmGame }); } })) : [],
+      hasApp: !!(vm && vm.app), appTitle: vm && vm.app && vmd ? (vmd.apps.find((a) => a[0] === vm.app) || ['', '', ''])[2] : '',
+      panel: vmd ? vmd.panel : '', panelHead: vmd ? vmd.head : '', closeApp: () => { clearInterval(this.vmG); this.setState({ vm: Object.assign({}, vm, { app: null }), vmGame: null }); },
+      isNotes: !!vm && vm.app === 'notes', isClock: !!vm && vm.app === 'clock', isAbout: !!vm && vm.app === 'about', isGame: !!vm && vm.app === 'game',
+      note: vm ? (s.vmNote || {})[vm.os] || '' : '', onNote: (e) => this.setState({ vmNote: Object.assign({}, s.vmNote, { [vm.os]: e.target.value }) }),
+      about: vmd ? vmd.about : [],
+      score: g ? g.score : 0, timeLeft: g && !g.over ? Math.max(0, Math.ceil((g.end - Date.now()) / 1000)) + 's left' : '', play: () => this.vmGameStart(), playLabel: g ? 'Play again' : 'Play',
+      items: g ? g.items.map((it) => ({ hit: () => this.vmHit(it.id), style: 'left: ' + it.x.toFixed(1) + '%; top: ' + (10 + ((it.id * 7919) % 70)).toFixed(1) + '%' })) : [], itemEmoji: vmd ? vmd.item : '',
+      over: !!(g && g.over), ready: !g, gameHint: 'Press Play, then tap the ' + (vmd && vmd.item === '🍞' ? 'bread' : 'yarn') + ' as fast as you can for 20 seconds.' };
+    // quick look
+    const qq = s0.ql;
+    const qlv = { on: !!qq, name: qq ? qq.name : '', ext: qq ? qq.ext : '', color: qq ? qq.color : '#566174', meta: qq ? [qq.ext + ' file', qq.size, qq.folder].filter(Boolean).join(' · ') : '', body: qq ? qq.body : '',
+      close: () => this.setState({ ql: null }), open: () => { const a = qq && qq.app; this.setState({ ql: null }); if (a) this.openApp(a); }, bg: (e) => { if (e.target === e.currentTarget) this.setState({ ql: null }); } };
+    // lock screen look
+    const lsStyle = { classic: 'font-size: 110px; font-weight: 800; letter-spacing: -5px; line-height: 1', bold: 'font-size: 128px; font-weight: 900; letter-spacing: -6px; line-height: 1; background: linear-gradient(180deg, #ffffff, ' + accent + '); -webkit-background-clip: text; background-clip: text; color: transparent', thin: 'font-size: 120px; font-weight: 300; letter-spacing: -3px; line-height: 1', outline: 'font-size: 116px; font-weight: 800; letter-spacing: -4px; line-height: 1; color: transparent; -webkit-text-stroke: 2.5px #ffffff', mono: "font-size: 96px; font-weight: 700; line-height: 1; font-family: 'JetBrains Mono', ui-monospace, monospace" };
+    const nextTodo = s.todos.find((x) => !x.done);
+    const lockv = { clockStyle: lsStyle[s.lockStyle] || lsStyle.classic, widgets: s.lockWidgets !== false, avTop: s.lockWidgets !== false ? '70px' : '110px',
+      wx: (PXB_WX[s.wxCity] || PXB_WX[0]).city + ' ' + (s.tempF ? Math.round((PXB_WX[s.wxCity] || PXB_WX[0]).temp * 9 / 5 + 32) + '°F' : (PXB_WX[s.wxCity] || PXB_WX[0]).temp + '°C'),
+      bat: (s.batReal ? Math.round(s.batReal.level * 100) : Math.round((s.batSim || 0.82) * 100)) + '%', todo: nextTodo ? nextTodo.text : 'No to-dos' };
+      return { fch, dsv, dIn, dOut, mcv, swv, sv2, tmv, vmv, qlv, lockv, lookWall };
+    })();
     const blocked = s.savedAt === -1;
     let savedTime = '';
     if (s.savedAt > 0) { const t = new Date(s.savedAt); savedTime = pad(t.getHours()) + ':' + pad(t.getMinutes()) + ':' + pad(t.getSeconds()); }
@@ -6624,6 +7193,7 @@ class Component extends DCLogic {
     };
 
     return {
+      ...U10, deskCls: s0.deskShow ? 'deskshow' : '',
       pn: { on: !!s0.panic, pct: s0.panic ? s0.panic.pct + '%' : '0%', code: s0.panic ? s0.panic.code : '', mod: s0.panic ? s0.panic.mod : '', hex: s0.panic ? s0.panic.hex : '', now: () => this.panicDone() },
       su, acct, lk, ac, sv, disp, us, lng, L: uiL, uiDir, sx, sbp, set, ai, wt, aiGlow: !!s0.aiBusy && !s0.reduceMotion,
       sbIsOpen: !!s0.sb && !s0.locked, sbOpen: ['battery', 'wifi', 'bt', 'sound', 'user'].reduce((o, k) => { o[k] = (e) => this.toggleSb(k, e); return o; }, {}),
@@ -6670,13 +7240,14 @@ class Component extends DCLogic {
       saveIcon: blocked ? 'M12 9v3M12 14.5h.01' : 'M9.5 12l2 2 3.5-3.5',
       saveNowMenu: () => this.saveNow(),
       accent, peng: PXB_PENG, wp, wallpapers, windows, dock, menus, open,
-      rootCls: (s.cursor ? 'nocur' : '') + (s.reduceMotion || s.lowPower ? ' nomotion' : '') + (qzOn ? ' qz' : '') + ' th-' + s.theme + (rf ? ' replaying' : ''),
+      rootCls: ((s.osLook && s.osLook !== 'current') ? 'look-' + s.osLook + ' ' : '') + (s.cursor ? 'nocur' : '') + (s.reduceMotion || s.lowPower ? ' nomotion' : '') + (qzOn ? ' qz' : '') + ' th-' + s.theme + (rf ? ' replaying' : ''),
       rootStyle: 'width: ' + this.W() + 'px; height: ' + this.H() + 'px; position: relative; overflow: hidden; outline: none; font-family: Manrope, "Noto Serif Tibetan", "Noto Naskh Arabic", system-ui, sans-serif; color: #ffffff; background: ' + wp.bg + '; --acc: ' + accent + '; --bg: ' + T.bg + '; --side: ' + T.side + '; --card: ' + T.card + '; --fg: ' + T.fg + '; --sub: ' + T.sub + '; --line: ' + T.line + '; --tbar: ' + T.tbar + ';',
       onMove: (e) => this.onMove(e),
       onUp: () => this.endDrag(),
       onRootDown: (e) => {
         const tg = (e.target && e.target.tagName) || '';
         if (tg !== 'INPUT' && tg !== 'TEXTAREA' && tg !== 'SELECT') { try { e.currentTarget.focus({ preventScroll: true }); } catch (err) { /* ignore */ } }
+        this.lastInput = Date.now();
         if (s0.menu || s0.ctx || s0.cc || s0.nc || s0.sb) this.setState({ menu: null, ctx: null, cc: false, nc: false, sb: null });
       },
       onDeskMenu: (e) => { e.preventDefault(); const root = e.currentTarget.closest('[data-pxroot]'); const p = root ? this.rootPt(e, root) : { x: 400, y: 300 }; this.setState({ ctx: { x: Math.min(p.x, this.W() - 210), y: Math.min(Math.max(p.y, 30), this.H() - 260) }, menu: null, cc: false }); },
@@ -6792,11 +7363,23 @@ class Component extends DCLogic {
     if (s.poweredOff) { if (e.key === 'Enter' || e.key === ' ') this.powerOn(); return; }
     if (s.sleeping) { e.preventDefault(); this.wakeUp(); return; }
     if (s.replay && (e.key === 'Escape' || e.code === 'Escape')) { this.stopReplay(); return; }
+    this.lastInput = Date.now();
+    if (s.saver) { e.preventDefault(); this.saverPt = null; this.setState({ saver: false }); return; }
     if (s.booting || !s.setupDone || s.locked || s.replay) return;
+    if (s.ql && (e.key === ' ' || e.key === 'Escape')) { e.preventDefault(); this.setState({ ql: null }); return; }
+    if (s.sw) {
+      if (e.key === 'Tab') { e.preventDefault(); const n = s.sw.ids.length; this.setState({ sw: { ids: s.sw.ids, i: (s.sw.i + (e.shiftKey ? -1 : 1) + n) % n } }); return; }
+      if (e.key === 'Escape') { e.preventDefault(); this.setState({ sw: null }); return; }
+      if (e.key === 'Enter') { e.preventDefault(); this.swCommit(); return; }
+    }
+    if (e.key === 'Tab' && e.altKey && !e.metaKey && !e.ctrlKey) { e.preventDefault(); const ids = this.swOrder(); if (ids.length) this.setState({ sw: { ids, i: ids.length > 1 ? (e.shiftKey ? ids.length - 1 : 1) : 0 } }); return; }
+    if (s.mc && e.key === 'Escape') { e.preventDefault(); this.toggleMC(false); return; }
     const tag = (e.target && e.target.tagName) || '';
     const typing = tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT';
     const mod = e.metaKey || e.ctrlKey;
     if (e.code === 'Escape' || e.key === 'Escape') { const x = this.shortcuts().find((k) => k.nomod); x.run(); this.showHud(x); return; }
+    if ((e.ctrlKey && !e.metaKey && !e.shiftKey && !e.altKey && !typing && (e.key === 'ArrowUp' || e.key === 'ArrowDown')) || e.key === 'F3') { e.preventDefault(); this.toggleMC(e.key === 'ArrowDown' ? false : undefined); return; }
+    if (e.key === ' ' && !typing && !e.metaKey && !e.ctrlKey && !e.altKey && this.topId() === 'files' && this.quickLook()) { e.preventDefault(); return; }
     if (!mod) {
       if (typing || e.altKey) return;
       const d = { ArrowUp: 'U', ArrowDown: 'D', ArrowLeft: 'L', ArrowRight: 'R' }[e.key];
@@ -6814,7 +7397,7 @@ class Component extends DCLogic {
     e.preventDefault(); e.stopPropagation();
     x.run(); this.showHud(x);
   }
-  escape() { if (this.state.ringing) this.stopAlarm(); this.setState({ sb: null, lpEdit: false, fsHelp: false, spot: false, spotQ: '', launch: false, launchQ: '', cc: false, nc: false, menu: null, ctx: null, phView: -1 }); this.focusRoot(); }
+  escape() { if (this.state.ringing) this.stopAlarm(); this.setState({ sb: null, lpEdit: false, mc: false, sw: null, ql: null, dropSheet: null, fsHelp: false, spot: false, spotQ: '', launch: false, launchQ: '', cc: false, nc: false, menu: null, ctx: null, phView: -1 }); this.focusRoot(); }
   restart() {
     this.persist();
     clearInterval(this.snT); clearInterval(this.mtT);
@@ -7143,7 +7726,7 @@ class Component extends DCLogic {
     this.setState({ setupDone: true, userName: acc.name, pwHash: acc.pw, pwHint: acc.hint, locked: false, sPw: '', sPw2: '', sShow: false, step: 0, uiLang: s.sLang });
     this.refreshUsers();
     this.focusRoot();
-    setTimeout(() => this.notify('Welcome to PxBook, ' + acc.name + '! Open Px Apps to see all 63 apps.', 'Px Official', 'apps'), 900);
+    setTimeout(() => this.notify('Welcome to PxBook, ' + acc.name + '! Open Px Apps to see all 65 apps.', 'Px Official', 'apps'), 900);
   }
   tryLogin() {
     const s = this.state;
